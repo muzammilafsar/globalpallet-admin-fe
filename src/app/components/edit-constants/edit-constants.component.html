@@ -1,0 +1,33 @@
+<h2 style="text-align: center;">Update/Edit Constant</h2>
+<!-- page content -->
+<div class="container main">
+<form [formGroup]="updateForm" class="edit-form">
+
+<div class="row">
+  <div class="col-25">
+       <label for="key">Key</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="subtitle" formControlName="key" placeholder="Key for Constant" #key></div>
+   </div>
+ </div>
+</div> 
+
+<!-- constants part -->
+<div class="row">
+    <div class="col-25">
+      <label for="constants">Constants</label>
+    </div>
+    <div class="col-75">
+      <textarea id="constants" formControlName="constants" placeholder="Constants...." style="height:200px" #constants></textarea>
+    </div>
+</div>
+
+<div class="row">
+   <input type="submit" value="Update Constants" (click)= "updateConstants(key.value, constants.value)">
+</div>
+
+</form>
+</div>
+

@@ -1,0 +1,114 @@
+
+<!-- sidenav fixed -->
+<div id="mySidenav" class="sidenav text-center">
+  <a class="closebtn" style="border-bottom: 0px;" (click)="closeNav()">&times;</a>
+  <div>
+
+      <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Delivery<span class="caret"></span></a>
+      <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+         <li><a href="#" (click)="closeNav()" routerLink="/assignedorders">My Orders</a></li>
+      </ul>
+
+    <a href="#about" class="dropdown-btn" type="button" data-toggle="dropdown">Products <span class="caret"></span></a>
+       <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+          <li><a href="#" (click)="closeNav()" routerLink="/list">Product List</a></li>
+          <li><a href="#" (click)="closeNav()" routerLink="/createp" >New Product</a></li>
+       </ul>
+
+    <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Category <span class="caret"></span></a>
+       <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+        <li><a href="#" (click)="closeNav()" routerLink="/categorylist">Category List</a></li>
+        <li><a href="#" (click)="closeNav()" routerLink="/createcat">New Category</a></li>
+       </ul>
+
+
+    <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Orders <span class="caret"></span></a>
+       <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+          <li><a href="#" (click)="closeNav()" routerLink="/orderlist">All Orders</a></li>
+          <li><a href="#" (click)="closeNav()" routerLink="/activeorders">Active Orders</a></li>
+       </ul>
+
+
+    <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Customers <span class="caret"></span></a>
+       <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+          <li><a href="#" (click)="closeNav()" routerLink="/customerlist">All Customers</a></li>
+          <li><a href="#" (click)="closeNav()" routerLink="/deletedaddress">User's Address</a></li>
+       </ul>
+
+       <a href="#about" class="dropdown-btn" type="button" data-toggle="dropdown">Statistics<span class="caret"></span></a>
+       <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+            <li><a href="#" (click)="closeNav()" routerLink="/feedbacks">Feedbacks</a></li>
+            <li><a href="#" (click)="closeNav()" routerLink="/otphistory">OTP History</a></li>
+            <li><a href="#" (click)="closeNav()" routerLink="/apphistory">AppInstall</a></li>
+       </ul>
+
+       <a href="#about" class="dropdown-btn" type="button" data-toggle="dropdown">Forms<span class="caret"></span></a>
+       <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+          <li><a href="#" (click)="closeNav()" routerLink="/customercontact">Customer Issues</a></li>
+          <li><a href="#" (click)="closeNav()" routerLink="/partyorders">Party Orders</a></li>
+       </ul>
+
+       <a href="#about" class="dropdown-btn" type="button" data-toggle="dropdown">Carousel<span class="caret"></span></a>
+       <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+          <li><a href="#" (click)="closeNav()" routerLink="/carousels">All Carousels</a></li>
+          <li><a href="#" (click)="closeNav()" routerLink="/createcarousels" >New Carousel</a></li>
+       </ul>
+
+       <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Offers <span class="caret"></span></a>
+       <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+          <li><a href="#" (click)="closeNav()" routerLink="/newoffers">New Offers</a></li>
+          <li><a href="#" (click)="closeNav()" routerLink="/offers">All Offers</a></li>
+       </ul>
+
+       <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Locality <span class="caret"></span></a>
+       <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+          <li><a href="#" (click)="closeNav()" routerLink="/createlocality">New Locality</a></li>
+          <li><a href="#" (click)="closeNav()" routerLink="/localitylist">Locality List</a></li>
+       </ul>
+
+       <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Coupons <span class="caret"></span></a>
+       <ul class="dropdown-container" *ngIf= "userIsAuthenticated">
+          <li><a href="#" (click)="closeNav()" routerLink="/newcoupons">New Coupons</a></li>
+          <li><a href="#" (click)="closeNav()" routerLink="/coupons">All Coupons</a></li>
+       </ul>
+
+       <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Constants <span class="caret"></span></a>
+       <ul class="dropdown-container" *ngIf= "userIsAuthenticated">
+          <li><a href="#" (click)="closeNav()" routerLink="/constantslist">Constants</a></li>
+       </ul>
+
+       <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Explore <span class="caret"></span></a>
+          <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+           <li><a href="#" (click)="closeNav()" routerLink="/explorelist">Explore List</a></li>
+          </ul>
+
+         <a href="#" class="dropdown-btn" data-toggle="dropdown">My Profile<span class="caret"></span></a>
+            <ul class="dropdown-container" *ngIf="userIsAuthenticated">
+                <li><a href="#" (click)="closeNav()" routerLink="/assignedorders">My Orders</a></li>
+            </ul>
+
+            <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Delivery Boys <span class="caret"></span></a>
+            <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+              <li><a href="#" (click)="closeNav()" routerLink="/deliveryboyslist">All Delivery Boys</a></li>
+              <li><a href="#" (click)="closeNav()" routerLink="/adddeliveryboys">Add Delivery Boys</a></li>
+            </ul>
+
+          <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Deliveries <span class="caret"></span></a>
+          <ul class="dropdown-container"  *ngIf= "userIsAuthenticated">
+           <li><a href="#" (click)="closeNav()" routerLink="/boysdata">Daily Deliveries</a></li>
+          </ul>
+
+          <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown">Report <span class="caret"></span></a>
+          <ul class="dropdown-container" *ngIf= "userIsAuthenticated">
+             <li><a href="#" (click)="closeNav()" routerLink="/dailyreport">Daily</a></li>
+             <li><a href="#" (click)="closeNav()" routerLink="/businessreport">Business</a></li>
+          </ul>
+
+       <a href="#" class="dropdown-btn" type="button" data-toggle="dropdown" ><ng-container *ngIf="userIsAuthenticated">Account</ng-container><ng-container *ngIf="!userIsAuthenticated">Login/SingUp</ng-container> <span class="caret"></span></a>
+       <ul class="dropdown-container">
+               <!-- ngIf for logged-in condition for logout -->
+        <li *ngIf="!userIsAuthenticated"><a  routerLink="/login"  (click)="closeNav()">LogIn</a></li>
+        <li *ngIf="userIsAuthenticated"><a routerLink="/login" (click)="onLogout()" (click)="closeNav()">LogOut</a></li>
+       </ul>
+      </div>
+</div>

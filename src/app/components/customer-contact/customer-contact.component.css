@@ -1,0 +1,57 @@
+.main {
+  margin-bottom: 20px;
+  margin-top: 20px;
+     /* Same as the width of the sidenav */
+    font-size: 16px; /* Increased text to enable scrolling */
+
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+  /* css for listing */
+
+  .table {
+    border: 1px solid #c70039;
+    cursor: pointer;
+     border-collapse: collapse;
+       border-spacing: 0;
+       width: 100%;
+  }
+
+  .table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #c70039;
+  }
+
+   th, td {
+    text-align: center;
+
+  }
+
+   tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+  #customer-orders {
+  padding-left: 5px;
+  padding-right: 5px;
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+        width: 1350px;
+    }
+    }
+
+    /* Automatic Serial Number Row */
+.css-serial {
+  counter-reset: serial-number; /* Set the serial number counter to 0 */
+ }
+ .css-serial td:first-child:before {
+  counter-increment: serial-number; /* Increment the serial number counter */
+  content: counter(serial-number); /* Display the counter */
+ }

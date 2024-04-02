@@ -1,0 +1,100 @@
+<h2 style="text-align: center;">Update/Edit Offers</h2>
+<!-- page content -->
+<div class="container main">
+
+  <form [formGroup]="updateForm" class="edit-form">
+
+<!-- prices part -->
+<div class="row">
+	   <div class="col-25">
+          <label for="image">Image</label>
+       </div>
+    <div class="col-75">
+      <div class="input_fields_wraps">
+         <div><input type="text" id="image" formControlName="image" placeholder="URL for Image" #image></div>
+      </div>
+    </div>
+</div>
+
+ <div class="row">
+  <div class="col-25">
+       <label for="title">Title</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="title" formControlName="title" placeholder="Title for Offer" #title></div>
+   </div>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-25">
+       <label for="subtitle">SubTitle</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="subtitle" formControlName="subtitle" placeholder="Subtitle for Offer" #subtitle></div>
+   </div>
+ </div>
+</div> 
+
+	<!-- description part -->
+   <div class="row">
+      <div class="col-25">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="description" formControlName="description" placeholder="Detail Description About Offer...." style="height:200px" #description></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+           <label for="coupon_code">Coupon Code</label>
+        </div>
+     <div class="col-75">
+       <div class="input_fields_wraps">
+          <div><input type="text" id="coupon_code" formControlName="coupon_code" placeholder="Coupon Code" #coupon_code></div>
+       </div>
+     </div>
+    </div> 
+
+<!-- status -->
+<div class="row">
+  <div class="col-25">
+	<label for="enabled">(Active/Deactive)</label>
+  </div>
+    <div class="col-75">
+
+        <div>
+            <select formControlName="enabled" #enabled>
+                <option  [value]="true">True (Activate)</option>
+                <option [value]="false">False (DeActivate)</option>
+            </select>
+          <!-- <input type="text" id="enabled" formControlName="enabled" placeholder="Boolean (True Or False)" #enabled> -->
+        </div>
+
+   <!--  <label class="switch">
+         <input type="checkbox">
+         <span class="slider round"></span>
+     </label> -->
+	</div>
+</div>
+
+ <!-- index part -->
+ <div class="row">
+  <div class="col-25">
+     <label for="index">Index</label>
+  </div>
+<div class="col-75">
+ <div class="input_fields_wraps">
+    <div><input type="number" id="index" name="index" formControlName="index" placeholder="Index of Carousels eg.(10)" #index></div>
+ </div>
+</div>
+</div>
+
+    <div class="row">
+      <input type="submit" value="Update Offers" (click)= "updateOffers(image.value, title.value, subtitle.value, description.value, coupon_code.value, enabled.value, index.value)">
+    </div>
+  </form>
+</div>

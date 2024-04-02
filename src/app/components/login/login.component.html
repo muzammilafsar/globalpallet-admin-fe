@@ -1,0 +1,21 @@
+<h2 style="text-align: center;">Admin Login</h2>
+
+
+<form action="/" (submit)="onLogin(loginForm)" #loginForm="ngForm" >
+  <div class="imgcontainer">
+    <img style="height: 175px; width: 175px;" src="/assets/avatar.png" alt="Avatar" class="avatar">
+    </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input  placeholder="Enter Username" ngModel name="email" type="email" email required>
+
+    <label for="password"><b>Password</b></label>
+    <input  placeholder="Enter Password" ngModel name="password" type="password" required>
+        
+    <button type="submit" type="submit" >Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+</form>

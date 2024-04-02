@@ -1,0 +1,143 @@
+<nav class="navbar nav navbar-default">
+    <div class="container-fluid">
+
+    
+    <a class="navbar-brand" routerLink = "/mains">GlobalPallet [ ADMIN ]</a>
+
+    <li class="sidnav">
+      <span style="margin-right: 15px;font-size:30px;float: right; cursor: pointer;" (click)="openSidenav()">&#9776;</span>
+    </li>
+
+    <a class="navbar-brand" style="padding: 15px 15px 15px 0px; float: right; transform: uppercase; font-weight: bold; font-size: small;">{{name}}</a>
+
+    <!-- <ul class="nav navbar-nav navbar-right">
+      <li style="margin: 0.7rem" (click)="openSidenav()">Welcome, {{name}}</li>
+      <li *ngIf="userIsAuthenticated"><button class="btn btn-danger" style="color: white; margin: 0.7rem" (click)="onLogout()">LogOut</button></li>
+    </ul> -->
+
+
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="nav navbar-nav" *ngIf="userIsAuthenticated">
+
+        <li class="dropdown nav-item" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Products <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/list">Product List</a></li>
+              <li><a href="#" routerLink="/createp" >New Product</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/categorylist">Category List</a></li>
+              <li><a href="#" routerLink="/createcat">New Category</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Orders <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/activeorders">Active Orders</a></li>
+              <li><a href="#" routerLink="/orderlist">All Orders</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Customer <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/customerlist">All Customers</a></li>
+              <li><a href="#" routerLink="/deletedaddress">Address List</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav-item" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Statistics<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/feedbacks">Feedbacks</a></li>
+              <li><a href="#" routerLink="/otphistory">OTP History</a></li>
+              <li><a href="#" routerLink="/apphistory">AppInstall History</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav-item" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Forms<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/customercontact">Customer Issues</a></li>
+              <li><a href="#" routerLink="/partyorders">Party Orders</a></li>
+          </ul>
+        </li>
+
+       <li class="dropdown" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Carousel<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/carousels">All Carousels</a></li>
+              <li><a href="#" routerLink="/createcarousels">Create Carousels</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav-item" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Offers <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/newoffers">New Offers</a></li>
+              <li><a href="#" routerLink="/offers">All Offers</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav-item" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Locality <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/createlocality">New Locality</a></li>
+              <li><a href="#" routerLink="/localitylist">Locality List</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Explore <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/explorelist">Explore List</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Deliveries <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/boysdata">Daily Deliveries</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav-item" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Coupons <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/newcoupons">New Coupons</a></li>
+              <li><a href="#" routerLink="/coupons">All Coupons</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown" *ngIf="own"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Constants <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/constantslist">Constants</a></li>
+          </ul>
+        </li>
+  
+        <li *ngIf="own" class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Report <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/dailyreport">Daily</a></li>
+              <li><a href="#" routerLink="/businessreport">Business</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Delivery Boys <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/deliveryboyslist">All Delivery Boys</a></li>
+              <li><a href="#" routerLink="/adddeliveryboys">Add Delivery Boys</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Profile<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/assignedorders">My Orders</a></li>
+          </ul>
+        </li>
+                
+     <!-- ngIf for logged-in condition for logout -->
+     <li class="dropdown nav-item" *ngIf="!userIsAuthenticated"><button class="btn btn-danger" style="color: white; margin: 0.7rem" routerLink="/login">LogIn</button></li>
+     <!-- ngIf for condition when admin not loggen-in -->
+     <li class="dropdown nav-item" *ngIf="userIsAuthenticated"><button class="btn btn-danger" style="color: white; margin: 0.7rem" (click)="onLogout()">LogOut</button></li>
+
+    </ul>
+
+
+     </div>
+
+    </div>
+  </nav>
+  <app-sidenav #sidenav></app-sidenav>

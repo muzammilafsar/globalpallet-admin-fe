@@ -1,0 +1,138 @@
+<h2 style="text-align: center;">
+    Update/Edit Order</h2>
+<!-- page content -->
+<div class="container main">
+    <form [formGroup]="updateForm" class="edit-form">
+
+        <!-- user remarks part -->
+        <div class="row">
+            <div class="col-25">
+                <label for="user_remarks">User Remarks</label>
+            </div>
+            <div class="col-75">
+                <div class="input_fields_wraps">
+                    <div>
+                        <input type="text" id="user_remarks" name="user_remarks" formControlName="user_remarks" placeholder="Detail User Remarks..."
+                            #user_remarks>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- status note part -->
+        <div class="row">
+            <div class="col-25">
+                <label for="status_note">Status Note</label>
+            </div>
+            <div class="col-75">
+                <div class="input_fields_wraps">
+                    <div>
+                        <input type="text" id="status_note" name="status_note" formControlName="status_note" placeholder="Detail Status Note (will be shown to user)"
+                            #status_note>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Update" (click)="editActiveOrder(user_remarks.value, status_note.value)">
+        </div>
+    </form>
+<br>
+            <div class="row">
+                <div class="col-md-12" id="customer-orders">
+        
+                    <div class="box">
+        
+                        <div class="table-responsive">
+                            <table class="table table-hover css-serial" rules="all">
+                                <thead>
+                                    <tr>
+                                        <th>Serial No.</th>
+                                        <th>Order No.</th>
+         
+                                        <th>Assignation</th>
+                                        <th>Assigned To</th> 
+        
+                                        <th>Status Note</th>
+                                        <th>User Remarks</th>
+        
+                                        <th>Change Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>&nbsp;</td>
+        
+                                        <th><h3><span class="label label-primary">{{singleOrder.order_special_id}}</span></h3></th>
+        
+                                        <td>
+                                            <form [formGroup]="couponForm">
+                                            <select class="custom-select d-block w-100" class="form-control" formControlName="boy" style="padding: 8px;" id="state" required="">
+                                                 <option value="" hidden>Assign Order</option>
+        
+                                                 <ng-container *ngFor="let it of boys">
+                                                 <option>{{it.username}}</option>
+                                                 </ng-container>
+        
+                                            </select>
+                                            </form>
+                                            <br>
+                                            <button type="button" class="btn btn-primary" (click)="assignOrder(singleOrder._id);">Assign Order</button>
+                                        </td>
+        
+                                        <td>
+                                         <img *ngIf="singleOrder.delivery_boy" id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 6em; width: 6em" class="img-fluid" src={{singleOrder.delivery_boy.photo}}> 
+                                         <p>{{singleOrder.assigned_to ? singleOrder.assigned_to : 'TBA'}}</p>    
+                                        </td>
+
+                                        <td>{{singleOrder.status_note}}</td>       
+                                        <td>{{singleOrder.user_remarks}}</td>
+
+                                        <td>
+                                            <form [formGroup]="couponForm">
+                                                <select class="custom-select d-block w-100" class="form-control" formControlName="cancelreasons" style="padding: 8px;" id="state" required="">
+                                                    <option value="" hidden>Cancel Order</option>
+                        
+                                                     <ng-container *ngFor="let it of cancelreason">
+                                                     <option>{{it.key}}</option>
+                                                     </ng-container>
+                        
+                                                </select>
+                                             </form>
+                                         <button (click)="cancelOrder(singleOrder._id)" type="button" class="btn btn-danger">Cancel Order</button>
+                                         <button type="button" class="btn btn-success"(click)="completeOrder(singleOrder._id)">Complete Order</button>
+                                        </td>
+        
+                                    </tr>
+        
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+        
+                    </div>
+                    <!-- /.box -->
+        
+        
+                </div>
+            </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

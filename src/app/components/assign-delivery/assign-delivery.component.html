@@ -1,0 +1,28 @@
+<h2 style="text-align: center;">Assign Orders</h2>
+<!-- Container (Assigning Section) -->
+<div id="pricing" class="container">
+
+    <div class="row">
+
+      <div class="col-sm-4 col-xs-12" *ngFor="let i of boys">
+        <div class="panel panel-default text-center">
+
+          <div class="panel-heading">
+            <h3>{{i.name}}</h3>
+          </div>
+
+          <div class="panel-body text-center">
+              <img class="card-img-top" src="https://icons-for-free.com/download-icon-neutral+user-131964784832104677_512.png" alt="Card image" style="width:100%">
+              <p><strong>Id</strong> {{i.designation}}</p>
+              <p><strong>Email</strong> {{i.email}}</p>
+          </div>
+
+          <div class="panel-footer">
+            <button class="btn btn-lg" (click) = "assignorder();" >Assign Order</button>
+          </div>
+
+        </div>   
+      </div>  
+
+    </div>
+  </div>

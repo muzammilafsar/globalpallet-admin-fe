@@ -1,0 +1,100 @@
+<h2 style="text-align: center;">Create New Offer</h2>
+<!-- page content -->
+<div class="container main">
+  <form [formGroup]="createForm" class="create-form">
+
+<!-- prices part -->
+<div class="row">
+	   <div class="col-25">
+          <label for="image">Image</label>
+       </div>
+    <div class="col-75">
+      <div class="input_fields_wraps">
+         <div><input type="text" id="image" placeholder="URL for Image" #image></div>
+      </div>
+    </div>
+</div>
+
+ <div class="row">
+  <div class="col-25">
+       <label for="title">Title</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="title" placeholder="Title for Offer" #title></div>
+   </div>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-25">
+       <label for="subtitle">SubTitle</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="subtitle" placeholder="Subtitle for Offer" #subtitle></div>
+   </div>
+ </div>
+</div> 
+
+	<!-- description part -->
+   <div class="row">
+      <div class="col-25">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="description" placeholder="Detail Description About Offer...." style="height:200px" #description></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+           <label for="coupon_code">Coupon Code</label>
+        </div>
+     <div class="col-75">
+       <div class="input_fields_wraps">
+          <div><input type="text" id="coupon_code" placeholder="Coupon Code" #coupon_code></div>
+       </div>
+     </div>
+    </div> 
+
+<!-- status -->
+<div class="row">
+  <div class="col-25">
+	<label for="enabled">(Active/Deactive)</label>
+  </div>
+    <div class="col-75">
+
+        <div>
+            <select #enabled>
+                <option  [value]="true">True (Activate)</option>
+                <option [value]="false">False (DeActivate)</option>
+            </select>
+          <!-- <input type="text" id="enabled" placeholder="Boolean (True Or False)" #enabled> -->
+        </div>
+
+   <!--  <label class="switch">
+         <input type="checkbox">
+         <span class="slider round"></span>
+     </label> -->
+	</div>
+</div>
+
+        	<!-- Index part -->
+          <div class="row">
+            <div class="col-25">
+                 <label for="index">Index</label>
+              </div>
+           <div class="col-75">
+             <div class="input_fields_wraps">
+                <div><input type="number" id="index" placeholder="Index" #index></div>
+             </div>
+           </div>
+          </div> 
+
+
+    <div class="row">
+      <input type="submit" value="Create New Offers" (click)= "addOffers(image.value, title.value, subtitle.value, description.value, coupon_code.value, enabled.value, index.value)">
+    </div>
+  </form>
+</div>

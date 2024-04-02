@@ -1,0 +1,67 @@
+.main {
+	margin-bottom: 20px;
+	margin-top: 20px;
+   /* Same as the width of the sidenav */
+  font-size: 16px; /* Increased text to enable scrolling */
+
+}
+
+
+/* css for listing */
+
+.table>tbody>tr>td {
+  padding: 5px  10px 5px 10px;
+}
+
+.table>thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #c70039;
+}
+
+.table {
+   border: 1px solid #c70039;
+   cursor: pointer;
+   border-collapse: collapse;
+   border-spacing: 0px;
+   width: 100%;
+}
+
+th, td {
+text-align: center;
+}
+
+tr:nth-child(even) {
+background-color: #f2f2f2
+}
+
+.btn {
+  border-radius: 18px;
+  margin: 1px 1px;
+}
+
+.label {
+  padding: 0.5em 0.6em 0.5em;
+  font-size: 75%;
+  font-weight: 100;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1350px;
+  }
+  }
+
+/* Automatic Serial Number Row */
+.css-serial {
+  counter-reset: serial-number; /* Set the serial number counter to 0 */
+ }
+ .css-serial td:first-child:before {
+  counter-increment: serial-number; /* Increment the serial number counter */
+  content: counter(serial-number); /* Display the counter */
+ }
+

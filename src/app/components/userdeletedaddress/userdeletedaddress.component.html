@@ -1,0 +1,50 @@
+
+<h2 style="text-align: center;">User's Addresses List</h2>
+
+<!-- listing of user data (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial" rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+
+                                              <th>User</th>
+                                              <th>Name</th>
+                                              <th>Address</th>
+
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of deleteddata">
+                                              <td>&nbsp;</td>
+
+                                              <td>{{i.user}}</td>
+                                              <td>{{i.address.first_name}}</td>
+                                              <td>({{i.address.title}}):- {{i.address.address}}, {{i.address.address2}}, {{i.address.pincode}}, {{i.address.state}}, Locality:- {{i.address.locality}}</td>
+
+                                              <td>
+                                                <button type="button" class="btn btn-danger" (click)="delete(i._id)">Delete</button>
+                                              </td>
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>

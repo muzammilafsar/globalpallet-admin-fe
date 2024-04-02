@@ -1,0 +1,138 @@
+<h2 style="text-align: center;">Update/Edit User</h2>
+<!-- page content -->
+<div class="container main">
+
+  <form [formGroup]="updateForm" class="edit-form">
+
+<!-- user_flag_danger -->
+<div class="row">
+  <div class="col-25">
+	<label for="enabled">Ban Status</label>
+  </div>
+    <div class="col-75">
+
+        <!-- <div><input type="text" id="user_flag_danger" formControlName="user_flag_danger" placeholder="Boolean (True Or False)" #user_flag_danger></div> -->
+        <select formControlName="user_flag_danger" #user_flag_danger>
+            <option [value]="true">Banned</option>
+            <option [value]="false">Un-Banned</option>
+        </select>
+   <!--  <label class="switch">
+         <input type="checkbox">
+         <span class="slider round"></span>
+     </label> -->
+	</div>
+</div>
+
+<!-- user_flag_important -->
+<div class="row">
+  <div class="col-25">
+	<label for="enabled">User Status</label>
+  </div>
+    <div class="col-75">
+
+        <!-- <div><input type="text" id="user_flag_important" formControlName="user_flag_important" placeholder="Boolean (True Or False)" #user_flag_important></div> -->
+        <select formControlName="user_flag_important" #user_flag_important>
+          <option  [value]="true">Important</option>
+          <option [value]="false">Regular</option>
+      </select>
+   <!--  <label class="switch">
+         <input type="checkbox">
+         <span class="slider round"></span>
+     </label> -->
+	</div>
+</div>
+
+<!-- membership -->
+<div class="row">
+  <div class="col-25">
+	<label for="enabled">Membership</label>
+  </div>
+    <div class="col-75">
+
+        <!-- <div><input type="text" id="goldMember" formControlName="goldMember" placeholder="Boolean (True Or False)" #goldMember></div> -->
+        <select formControlName="goldMember" #goldMember>
+          <option  [value]="true">Gold</option>
+          <option [value]="false">Basic</option>
+      </select>
+   <!--  <label class="switch">
+         <input type="checkbox">
+         <span class="slider round"></span>
+     </label> -->
+	</div>
+</div>
+
+  	<!-- wallet part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="wallet_balance">Wallet Balance</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="wallet_balance" formControlName="wallet_balance" placeholder="Wallet Balance ...." #wallet_balance>
+      </div>
+    </div>
+
+	<!-- remarks part -->
+  <div class="row">
+    <div class="col-25">
+      <label for="remarks">Remarks</label>
+    </div>
+    <div class="col-75">
+      <textarea id="remarks" formControlName="remarks" placeholder="Detail Remarks About ...." style="height:200px" #remarks></textarea>
+    </div>
+  </div>
+
+  	<!-- private feedback part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="feedback_private">Private Remarks</label>
+      </div>
+      <div class="col-75">
+        <textarea id="feedback_private" formControlName="feedback_private" placeholder="Private Remarks About ...." style="height:200px" #feedback_private></textarea>
+      </div>
+    </div>
+
+      	<!-- Message for wallet balance update on app part -->
+        <div class="row">
+          <div class="col-25">
+            <label for="message">Message On App</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="message" formControlName="message" placeholder="Message ...." #message>
+          </div>
+        </div>
+
+<!-- show -->
+<div class="row">
+  <div class="col-25">
+	<label for="show">Show</label>
+  </div>
+    <div class="col-75">
+
+        <select formControlName="show" #show>
+          <option  [value]="true">True</option>
+          <option [value]="false">False</option>
+      </select>
+
+	</div>
+</div>
+
+<!-- rate -->
+<div class="row">
+  <div class="col-25">
+	<label for="rate">Rate</label>
+  </div>
+    <div class="col-75">
+
+        <select formControlName="rate" #rate>
+          <option  [value]="true">True</option>
+          <option [value]="false">False</option>
+      </select>
+
+	</div>
+</div>
+
+    <div class="row">
+      <input type="submit" value="Update User" (click)= "updateUser(user_flag_danger.value, user_flag_important.value, goldMember.value, remarks.value, wallet_balance.value, feedback_private.value, message.value, rate.value, show.value)">
+    </div>
+  </form>
+</div>

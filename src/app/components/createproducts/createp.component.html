@@ -1,0 +1,330 @@
+<h2 style="text-align: center;">Create New Product</h2>
+<!-- page content -->
+<div class="container main">
+  <form action="/" [formGroup]="createForm" class="create-form">
+
+  <!-- name part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" placeholder="Name of Product" #name>
+      </div>
+    </div>
+
+      <!-- product id part -->
+      <div class="row">
+        <div class="col-25">
+          <label for="product_id">Product Code</label>
+        </div>
+        <div class="col-75">
+          <input type="text" placeholder="Code of Product" #product_id>
+        </div>
+      </div>
+
+	<!-- tags part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="tags">Tags</label>
+      </div>
+      <div class="col-75">
+        <input type="text" placeholder="Tags seperated by commas for Search efficiency" #tags>
+      </div>
+    </div>
+
+	<!-- category part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="category">Category(key)</label>
+      </div>
+      <div class="col-75">
+          <input type="text" placeholder="Category Key" #category>
+        <!-- <select #category>
+            <option *ngFor = "let i of categories" [value]="i.key">{{i?.name}}</option>
+        </select> -->
+      </div>
+    </div>
+
+	<!-- sizes part -->
+<div class="row">
+	   <div class="col-25">
+          <label for="size_1">Size(1)</label>
+       </div>
+    <div class="col-75">
+      <div class="input_fields_wrap">
+         <div><input type="text" placeholder="Size of Product eg.(500gm/1kg or 1pc)" #size_1></div>
+      </div>
+    </div>
+</div>
+
+ <!-- <div class="row">
+  <div class="col-25">
+       <label for="size_2">Size(2)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wrap">
+      <div><input type="text"  placeholder="Size of Product eg.(500gm/1kg or 1pc)" #size_2></div>
+   </div>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-25">
+       <label for="size_3">Size(3)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wrap">
+      <div><input type="text"  placeholder="Size of Product eg.(500gm/1kg or 1pc)" #size_3></div>
+   </div>
+ </div>
+</div>  -->
+
+
+	<!-- quantity part -->
+  <div class="row">
+    <div class="col-25">
+         <label for="qty_1">Quantity(1)</label>
+      </div>
+   <div class="col-75">
+     <div class="input_fields_wrap">
+        <div><input type="number" placeholder="Quantity of Product eg.(1 or 2 or 3)" #qty_1></div>
+     </div>
+   </div>
+</div>
+
+  <!-- <div class="row">
+ <div class="col-25">
+      <label for="qty_2">Quantity(2)</label>
+   </div>
+<div class="col-75">
+  <div class="input_fields_wrap">
+     <div><input type="number"  placeholder="Quantity of Product eg.(1 or 2 or 3)" #qty_2></div>
+  </div>
+</div>
+</div>
+
+<div class="row">
+ <div class="col-25">
+      <label for="qty_3">Quantity(3)</label>
+   </div>
+<div class="col-75">
+  <div class="input_fields_wrap">
+     <div><input type="number"  placeholder="Quantity of Product eg.(1 or 2 or 3)" #qty_3></div>
+  </div>
+</div>
+</div>   -->
+
+
+
+<!-- prices part -->
+<div class="row">
+	   <div class="col-25">
+          <label for="price_1">Price(1)</label>
+       </div>
+    <div class="col-75">
+      <div class="input_fields_wraps">
+         <div><input type="number" placeholder="Price of Product eg.(Rs.50)" #price_1></div>
+      </div>
+    </div>
+</div>
+
+  <!-- <div class="row">
+  <div class="col-25">
+       <label for="price_2">Price(2)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="number" placeholder="Price of Product eg.(Rs.50)" #price_2></div>
+   </div>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-25">
+       <label for="price_3">Price(3)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="number" placeholder="Price of Product eg.(Rs.50)" #price_3></div>
+   </div>
+ </div>
+</div>  -->
+
+<!-- image upload part -->
+<div class="row">
+    <div class="form-group">
+        <div class="col-25">
+          <label for="image">Upload Image</label>
+       </div>
+	   <div class="col-75">
+        <div class="input_fields_wraps">
+            <div><input type="text" placeholder="Copy The Image URL Here !!" #image></div>
+         </div>
+
+        <!-- <div class="input-group">
+            <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    Browse… <input type="file" id="imgInp">
+                </span>
+            </span>
+            <input type="text" class="form-control" readonly #image>
+        </div>
+        <img id='img-upload'/> -->
+		</div>
+    </div>
+</div>
+
+
+<!-- status -->
+<div class="row">
+    <div class="col-25">
+    <label for="status">(Active/Deactive)</label>
+    </div>
+      <div class="col-75">
+  
+           <!-- <div><input type="text" placeholder="Boolean (Active-True Or Deactive-False)" #status> -->
+            <div>    <select #status>
+              <option  [value]="true">True (Activate)</option>
+              <option [value]="false">False (DeActivate)</option>
+          </select>
+           <!-- <div> <input type="checkbox" value="status" #status>Boolean (True Or False)--> </div> 
+  
+     <!--  <label class="switch">
+           <input type="checkbox">
+           <span class="slider round"></span>
+       </label> -->
+    </div>
+  </div>
+
+  <!-- coming_soon -->
+<div class="row">
+  <div class="col-25">
+  <label for="coming_soon">Coming Soon</label>
+  </div>
+    <div class="col-75">
+          <div>    <select #coming_soon>
+            <option [value]="false">Available</option>
+            <option [value]="true">Coming Soon</option>
+        </select>
+    </div> 
+  </div>
+</div>
+
+
+	<!-- description part -->
+   <div class="row">
+      <div class="col-25">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea type="text" placeholder="Detail Description About Product...." style="height:200px" #description></textarea>
+      </div>
+    </div>
+
+
+<!-- veg/non-veg part -->
+<div class="row">
+  <div class="col-25">
+       <label for="veg">Veg ?</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <!-- <div><input type="text" placeholder="Type of Food (Veg-true or Non-veg-false)" #veg></div> -->
+      <select #veg>
+        <option  [value]="true">Veg</option>
+        <option [value]="false">Non-Veg</option>
+    </select>
+   </div>
+ </div>
+</div>
+
+	<!-- chilli part -->
+  <div class="row">
+    <div class="col-25">
+      <label for="Chilly Level">Chilly Level</label>
+    </div>
+    <div class="col-75">
+      <input type="number" placeholder="Chilly Level" #chilly_level>
+    </div>
+  </div>
+
+<!-- newly part -->
+<div class="row">
+  <div class="col-25">
+       <label for="newly">Newly ?</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+    <select #newly>
+        <option  [value]="true">Yes</option>
+        <option [value]="false">No</option>
+    </select>
+   </div>
+ </div>
+</div>
+
+    	<!-- popular part -->
+      <div class="row">
+        <div class="col-25">
+             <label for="popular">Popular ?</label>
+          </div>
+       <div class="col-75">
+         <div class="input_fields_wraps">
+          <select #popular>
+              <option  [value]="true">Yes</option>
+              <option [value]="false">No</option>
+          </select>
+         </div>
+       </div>
+      </div>
+
+      	<!-- note part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="note">Note</label>
+      </div>
+      <div class="col-75">
+        <input type="text" placeholder="Note for product..." #note>
+      </div>
+    </div>
+
+    	<!-- bit part -->
+      <div class="row">
+        <div class="col-25">
+          <label for="bit">Bit</label>
+        </div>
+        <div class="col-75">
+          <input type="number" placeholder="Bit of product(Margin)....." #bit>
+        </div>
+      </div>
+
+<!-- index part -->
+<div class="row">
+  <div class="col-25">
+       <label for="index">Index</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="number" placeholder="Index for Product..." #index></div>
+   </div>
+ </div>
+</div>
+
+<!-- explore_tag part -->
+<div class="row">
+  <div class="col-25">
+       <label for="explore_tag">Explore Tag(Mobile)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" placeholder="Explore Tag for Product..." #explore_tag></div>
+   </div>
+ </div>
+</div>
+
+    <div class="row">
+      <input type="submit"  value="Create New Product" (click)= "addProduct(name.value, product_id.value, image.value, price_1.value, size_1.value, qty_1.value, category.value, tags.value, chilly_level.value, newly.value, popular.value, note.value, bit.value, status.value, description.value, veg.value, index.value, explore_tag.value, coming_soon.value)">
+    </div>
+  </form>
+</div>

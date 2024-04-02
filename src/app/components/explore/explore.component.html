@@ -1,0 +1,52 @@
+<h2 style="text-align: center;">Explores</h2>
+
+<!-- listing of products (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial" rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+                                              <th>Key</th>
+                                              <th>Image</th>
+                                              <th>Title</th>
+                                              <th>Tags</th>
+                                              <th>Icon</th>
+                                              <th>Color</th>
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of explore">
+                                              <td>&nbsp;</td>
+                                              <td>{{i?.name}}</td>
+                                              <td>
+                                                <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 8em; width: 16em" class="img-fluid" src={{i.image}}>            
+                                              </td>
+                                              <td>{{i?.detail.title}}</td>
+                                              <td>{{i?.detail.tag}}</td>
+                                              <td>{{i?.detail.icon}}</td>
+                                              <td>{{i?.color}}</td>
+                                              <td><button type="button" class="btn btn-primary" (click)="editExplore(i._id)">Edit</button>
+                                                <button type="button" class="btn btn-danger" (click)="deleteExplore(i._id)">Delete</button></td>
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>

@@ -1,0 +1,247 @@
+<h2 style="text-align: center;">New Coupon</h2>
+
+<!-- page content -->
+<div class="container main">
+  <form [formGroup]="createForm" class="create-form">
+
+      <!-- name part -->
+      <div class="row">
+          <div class="col-25">
+            <label for="name">name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="name" placeholder="name" #name>
+          </div>
+        </div>
+    
+    <!-- code part -->
+    <div class="row">
+        <div class="col-25">
+          <label for="code">code</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="code" placeholder="code" #code>
+        </div>
+      </div>
+    
+      <!-- amount part -->
+      <div class="row">
+          <div class="col-25">
+            <label for="amount">amount</label>
+          </div>
+          <div class="col-75">
+            <input type="number" id="amount" placeholder="amount" #amount>
+          </div>
+        </div>
+    
+      <!-- enable part -->
+    <div class="row">
+        <div class="col-25">
+        <label for="enable">(Active/Deactive)</label>
+        </div>
+          <div class="col-75">
+      
+              <div>
+                  <select #enable>
+                      <option  [value]="true">True (Activate)</option>
+                      <option [value]="false">False (DeActivate)</option>
+                  </select>
+                <!-- <input type="text" id="enabled" name="enabled" formControlName="enabled" placeholder="Boolean (1 or 0)" #enabled> -->
+              </div>
+      
+         <!--  <label class="switch">
+               <input type="checkbox">
+               <span class="slider round"></span>
+           </label> -->
+        </div>
+      </div>
+    
+        <!-- details part -->
+        <div class="row">
+            <div class="col-25">
+              <label for="details">description</label>
+            </div>
+            <div class="col-75">
+              <textarea id="details" placeholder="Detail Description About Image...." style="height:200px" #details></textarea>
+            </div>
+          </div>
+    
+    <!-- date_of_creation part -->
+    <div class="row">
+      <div class="col-25">
+           <label for="date_of_creation">D.O.C</label>
+        </div>
+     <div class="col-75">
+       <div class="input_fields_wraps">
+          <div><input type="text" id="date_of_creation" placeholder="date of creation" #date_of_creation></div>
+       </div>
+     </div>
+    </div> 
+    
+    <!-- validity part -->
+    <div class="row">
+        <div class="col-25">
+             <label for="validity">validity</label>
+          </div>
+       <div class="col-75">
+         <div class="input_fields_wraps">
+            <div><input type="text" id="validity" placeholder="validity" #validity></div>
+         </div>
+       </div>
+      </div>
+    
+      <!-- times_valid_per_user part -->
+    <div class="row">
+        <div class="col-25">
+             <label for="times_valid_per_user">times valid per user</label>
+          </div>
+       <div class="col-75">
+         <div class="input_fields_wraps">
+            <div><input type="number" id="times_valid_per_user" placeholder="times valid per user" #times_valid_per_user></div>
+         </div>
+       </div>
+      </div>
+    
+      <!-- first_order_only part -->
+      <div class="row">
+          <div class="col-25">
+          <label for="first_order_only">first order only</label>
+          </div>
+            <div class="col-75">
+        
+                <div>
+                    <select #first_order_only>
+                        <option  [value]="true">True (Activate)</option>
+                        <option [value]="false">False (DeActivate)</option>
+                    </select>
+                  <!-- <input type="text" id="enabled" name="enabled" formControlName="enabled" placeholder="Boolean (1 or 0)" #enabled> -->
+                </div>
+        
+           <!--  <label class="switch">
+                 <input type="checkbox">
+                 <span class="slider round"></span>
+             </label> -->
+          </div>
+        </div>
+
+      <!-- valid_once part -->
+      <div class="row">
+          <div class="col-25">
+          <label for="valid_once">valid once</label>
+          </div>
+            <div class="col-75">
+        
+                <div>
+                    <select #valid_once>
+                        <option  [value]="true">True (Activate)</option>
+                        <option [value]="false">False (DeActivate)</option>
+                    </select>
+                  <!-- <input type="text" id="enabled" name="enabled" formControlName="enabled" placeholder="Boolean (1 or 0)" #enabled> -->
+                </div>
+        
+           <!--  <label class="switch">
+                 <input type="checkbox">
+                 <span class="slider round"></span>
+             </label> -->
+          </div>
+        </div>
+    
+      <!-- active part -->
+      <div class="row">
+          <div class="col-25">
+          <label for="active">(Active/Deactive)</label>
+          </div>
+            <div class="col-75">
+        
+                <div>
+                    <select #active>
+                        <option  [value]="true">True (Activate)</option>
+                        <option [value]="false">False (DeActivate)</option>
+                    </select>
+                  <!-- <input type="text" id="enabled" name="enabled" formControlName="enabled" placeholder="Boolean (1 or 0)" #enabled> -->
+                </div>
+        
+           <!--  <label class="switch">
+                 <input type="checkbox">
+                 <span class="slider round"></span>
+             </label> -->
+          </div>
+        </div>
+    
+      <!-- min_order_value part -->
+    <div class="row">
+        <div class="col-25">
+             <label for="min_order_value">min order value</label>
+          </div>
+       <div class="col-75">
+         <div class="input_fields_wraps">
+            <div><input type="number" id="min_order_value" placeholder="min_order_value" #min_order_value></div>
+         </div>
+       </div>
+      </div>
+    
+      <!-- min_order_applicable part -->
+    <div class="row">
+        <div class="col-25">
+             <label for="min_order_applicable">min order applicable</label>
+          </div>
+       <div class="col-75">
+         <div class="input_fields_wraps">
+            <div><input type="number" id="min_order_applicable" placeholder="min_order_applicable" #min_order_applicable></div>
+         </div>
+       </div>
+      </div>
+    
+      <!-- percent part -->
+    <div class="row">
+        <div class="col-25">
+             <label for="percent">percent</label>
+          </div>
+       <div class="col-75">
+         <div class="input_fields_wraps">
+            <div><input type="number" id="percent" placeholder="percent" #percent></div>
+         </div>
+       </div>
+      </div>
+    
+      <!-- goldMember part -->
+      <div class="row">
+          <div class="col-25">
+          <label for="goldMember">goldMember</label>
+          </div>
+            <div class="col-75">
+        
+                <div>
+                    <select #goldMember>
+                        <option  [value]="true">True (Activate)</option>
+                        <option [value]="false">False (DeActivate)</option>
+                    </select>
+                  <!-- <input type="text" id="enabled" name="enabled" formControlName="enabled" placeholder="Boolean (1 or 0)" #enabled> -->
+                </div>
+        
+           <!--  <label class="switch">
+                 <input type="checkbox">
+                 <span class="slider round"></span>
+             </label> -->
+          </div>
+        </div>
+    
+    <!-- index part -->
+    <div class="row">
+      <div class="col-25">
+         <label for="index">Index</label>
+      </div>
+    <div class="col-75">
+     <div class="input_fields_wraps">
+        <div><input type="number" id="index" placeholder="Index of Coupons eg.(10)" #index></div>
+     </div>
+    </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Create New Coupon" (click)= "addCoupons(name.value, code.value, amount.value, enable.value, details.value, date_of_creation.value, validity.value, times_valid_per_user.value, first_order_only.value, valid_once.value, active.value, min_order_value.value, min_order_applicable.value, percent.value, goldMember.value, index.value)">
+    </div>
+  </form>
+</div>
+
+

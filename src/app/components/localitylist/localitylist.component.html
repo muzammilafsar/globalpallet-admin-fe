@@ -1,0 +1,56 @@
+<h2 style="text-align: center;">Locality List</h2>
+
+
+<div class="container bg-1 main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial"  rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+                                              <th>Key</th>
+                                              <th>Name</th>
+                                              <th>Areas</th>
+                                              <th>Location ID</th>
+                                              <th>(Enable)?</th>
+                                              <th>Index</th>
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of locality">
+                                              <td>&nbsp;</td>
+                                              <td>{{i.key}}</td>
+                                              <td>{{i.name}}</td>
+                                              <td>{{i.description}}</td>
+                                              <td>{{i.locality_id}}</td>
+
+                                              <td *ngIf="i.enable"><span class="label label-success">Activate</span></td>
+                                              <td *ngIf="!i.enable"><span class="label label-danger">DeActivate</span></td>
+                                              <td>{{i.index}}</td>
+
+                                              <td>
+                                                <button type="button" class="btn btn-primary" (click)="editLocality(i._id)">Edit</button>
+                                                <button type="button" class="btn btn-danger" (click)="deleteLocality(i._id)">Delete</button>
+                                              </td>
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>
+
+

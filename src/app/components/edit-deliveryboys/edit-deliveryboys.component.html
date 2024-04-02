@@ -1,0 +1,108 @@
+<h2 style="text-align: center;">Update/Edit Delivery Boy</h2>
+<!-- page content -->
+<div class="container main">
+  <form [formGroup]="updateForm" class="edit-form">
+
+  <!-- name part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" formControlName="name" placeholder="Name of Delivery Boy" #name>
+      </div>
+    </div>
+
+<!-- usrname part -->
+<div class="row">
+    <div class="col-25">
+      <label for="username">Username</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="username" formControlName="username" placeholder="Username of Delivery Boy" #username>
+    </div>
+  </div>
+
+  <!-- pass part -->
+<div class="row">
+  <div class="col-25">
+    <label for="password">Password</label>
+  </div>
+  <div class="col-75">
+    <input type="text" id="password" formControlName="password" placeholder="Password of Delivery Boy" #password>
+  </div>
+</div>
+
+<!-- mobile part -->
+<div class="row">
+  <div class="col-25">
+    <label for="mobile">Mobile</label>
+  </div>
+  <div class="col-75">
+    <input type="text" id="mobile" formControlName="mobile" placeholder="Mobile of Delivery Boy" #mobile>
+  </div>
+</div>
+
+  <!-- Email part -->
+  <div class="row">
+      <div class="col-25">
+        <label for="email">Email</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="email" formControlName="email" placeholder="Email of Delivery Boy" #email>
+      </div>
+    </div>
+
+<!-- text part -->
+<div class="row">
+  <div class="col-25">
+       <label for="designation">Designation</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="designation" name="designation" formControlName="designation" placeholder="Designation of Delivery Boy" #designation></div>
+   </div>
+ </div>
+</div> 
+
+	<!-- photo part -->
+   <div class="row">
+      <div class="col-25">
+        <label for="photograph">Photograph</label>
+      </div>
+      <div class="col-75">
+        <textarea id="photograph" name="photograph" formControlName="photograph" placeholder="Image of Delivery Boy...." style="height:200px" #photograph></textarea>
+      </div>
+    </div>
+
+  <!-- description part -->
+   <div class="row">
+    <div class="col-25">
+      <label for="description">Description</label>
+    </div>
+    <div class="col-75">
+      <textarea id="description" name="description" formControlName="description" placeholder="Detail Description About Image...." style="height:200px" #description></textarea>
+    </div>
+  </div>
+
+<!-- status -->
+<div class="row">
+<div class="col-25">
+<label for="delivers">(Active/Deactive)</label>
+</div>
+  <div class="col-75">
+      <div>
+          <select formControlName="delivers" #delivers>
+              <option  [value]="true">True (Activate)</option>
+              <option [value]="false">False (DeActivate)</option>
+          </select>
+      </div>
+</div>
+</div>
+
+    <div class="row">
+      <input type="submit"  value="Update" (click)= "updateBoys(name.value, username.value, password.value, mobile.value, email.value, designation.value, photograph.value, description.value, delivers.value)">
+    </div>
+  </form>
+</div>
+

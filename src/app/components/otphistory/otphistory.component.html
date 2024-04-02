@@ -1,0 +1,50 @@
+
+<h2 style="text-align: center;">OTP History</h2>
+
+<!-- listing of otp data (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial" rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+
+                                              <th>Mobile</th>
+                                              <th>Ordered</th>
+                                              <th>OTP Count</th> 
+                                              <th>Verified ?</th>
+                                              <th>Verify OTP Count</th>
+                                              <th>Otp Count</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of otpdata">
+                                              <td>&nbsp;</td>
+
+                                              <td>{{i.mobile}}</td>
+                                              <td>{{i.ordered}}</td>
+                                              <td>{{i.sendOtpCount}}</td>
+                                              <td *ngIf="i.verified"><span class="label label-success">Yes</span></td> 
+                                              <td *ngIf="!i.verified"><span class="label label-danger">No</span></td> 
+                                              <td>{{i.verifyOtpCount}}</td>
+                                              <td>{{i.otp_no}}</td>
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>

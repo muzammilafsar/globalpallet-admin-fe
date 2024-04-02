@@ -1,0 +1,65 @@
+<h2 style="text-align: center;">Assigned Orders To Me</h2>
+
+<!-- listing of products (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+    <div class="row">
+        <div class="col-md-12" id="customer-orders">
+
+            <div class="box">
+
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial" rules="all">
+                        <thead>
+                            <tr>
+                                <th>Serial No.</th>
+                                <th>Order No.</th>
+                                <th>CountDown</th>
+                                <th>Mobile No.</th>
+                                <th>Name</th>
+                                <th>Items</th>
+                                <th>Quantity</th>
+                                <th>COD</th>
+                                <th>Order Date</th>
+                                <th>Total Payable</th>
+                                <th>Delivery Address</th>
+                                <th>Assigned To</th>
+                                <th>Delivery Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of orders">
+                                <td>&nbsp;</td>
+                                <th>{{i.order_special_id}}</th>
+                                <th><app-countdown [date]="i.order_date"></app-countdown></th>
+                                <!-- <td>{{timeLeft}} <button (click)='startTimer()'>Start</button></td> -->
+                                <td>{{i.mobile}}</td>
+                                <td>{{i?.delivery_address?.first_name}}</td>
+                                <td>
+                                    <ol style="float: left; padding: 0 0 0 10px;">
+                                        <li *ngFor="let it of i.items">{{it.product.name}}</li>  <!--  -{{it['product'][it.size]}} -->
+                                    </ol>
+                                </td>
+                                <td>{{i.total_items}}</td>
+                                <td *ngIf="i.cod"><span class="label label-success">Yes</span></td>
+                                <td *ngIf="!i.cod"><span class="label label-danger">No</span></td>
+                                <td>{{i.order_date | date : "dd.MM.y hh:mm:ss a"}}</td>
+                                <td>₹{{i.total_price}}/-</td>
+                                <td>{{i.delivery_address.address}}, {{i.delivery_address.address2}}, {{i.delivery_address.state}}, Locality:- {{i.delivery_address.locality}}</td>
+                                <td>{{i.assigned_to ? i.assigned_to : 'TBA'}}</td>
+                                <td><button type="button" class="btn btn-success"(click)="completeOrder(i._id, i.mobile)">Complete Order</button><button (click)="cancelOrder(i._id, i.mobile)" type="button" class="btn btn-danger">Cancel</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+
+            </div>
+            <!-- /.box -->
+
+
+        </div>
+    </div>
+</div>
+

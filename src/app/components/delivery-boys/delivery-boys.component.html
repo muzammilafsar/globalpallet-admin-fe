@@ -1,0 +1,73 @@
+<h2 style="text-align: center;">All Delivery Boys</h2>
+
+<!-- listing of products (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+    <div class="row">
+        <div class="col-sm-12" id="customer-orders">
+            <div class="box">
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial" rules="all">
+                        <thead>
+                            <tr>
+                                <th>Serial No.</th>
+                                <th>Name</th>
+                                <th>Photograph</th>
+                                <th>Designation</th>
+                                <th>Username</th>
+                                <!-- <th>Password</th>  -->
+                                <th>Mobile</th> 
+                                <th>Email</th>
+                                <th>DescriptionOfDeliveryBoy</th>
+                                <th>Status</th>  
+                                <th>Alter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cus of delboys">
+                                <td>&nbsp;</td>
+                                <td>{{cus.name}}</td>
+                               
+                                <td>
+                                  <img *ngIf="cus.photograph" id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 6em; width: 6em" class="img-fluid" src={{cus.photograph}}>
+                                </td>
+                               
+                                <td>
+                                   <span class="label label-warning" *ngIf="cus.designation === 'owner'">{{cus.designation}}</span>
+                                   <span class="label label-default" *ngIf="cus.designation === 'employee'">{{cus.designation}}</span>
+                                </td>
+
+                                <td>{{cus.username}}</td>
+
+                                <!-- <td>{{cus.password}}</td>  -->
+
+                                <td>{{cus.mobile}}</td>
+
+                                <td>{{cus.email}}</td>
+
+                                <td>{{cus.description}}</td>
+
+                                <td>
+                                    <span class="label label-danger" *ngIf="!cus.delivers">Banned</span>
+                                    <span class="label label-primary" *ngIf="cus.delivers">Working</span>
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-primary" (click)="editBoy(cus._id)">Edit</button>
+                                    <button type="button" class="btn btn-danger" (click)="deleteBoy(cus._id)">Delete</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- table-responsive -->
+
+            </div>
+            <!-- /.box -->
+
+
+        </div>
+    </div>
+</div>
+

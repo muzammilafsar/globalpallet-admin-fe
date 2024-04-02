@@ -1,0 +1,145 @@
+<h2 style="text-align: center;">All Orders</h2>
+
+<!-- listing of products (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container bg-1 main">
+    <div class="row">
+        <div class="col-md-12" id="customer-orders">
+
+            <div class="box">
+
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial" rules="all">
+                        <thead>
+                            <tr>
+                                <th>Serial No.</th>
+                                <th>Order No.</th>
+                                <th>IP Address</th>
+                                <th>Device</th>
+                                <th>Mobile No.</th>
+                                <th>Name</th>
+
+                                <th>Name Of Products</th>
+                                <th>NameOfProductAndPrice</th>
+                                <th>Total Items</th>
+                                <th>Total Price</th>
+
+                                <th>Order Cancelled?</th>
+                                <th>Cancel Reason</th>
+                                <th>COD</th>
+
+                                <th>Coupon Discount</th>
+                                <th>Coupon Name</th>
+                                <th>Coupon Applied?</th>
+                                <th>Delivery Charged?</th>
+                                
+                                <th>Order Date</th>
+
+                                <th>Delivery Time Taken</th>
+                                <th>Time Taken Minutes</th>
+
+                                <th>Delivery Address</th>
+                                <th>Delivered By</th>
+                                <th>Delivery Status</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center" *ngFor="let i of orders">
+                                <td>&nbsp;</td>
+
+                                <td><h3><span class="label label-primary">{{i.order_special_id}}</span></h3></td>
+
+                                <td>{{i.userip}}</td>
+
+                                <td>{{i.device}}</td>
+                                
+                                <td>{{i.mobile}}</td>
+
+                                <td>{{i?.delivery_address?.first_name}}</td>
+
+                                <td>
+                                    <ol style="padding: 0 0 0 12px;">
+                                        <li style="padding: 0 0 0 10px;" *ngFor="let it of i.items"><span style="color: #c4224c; font-weight: bold">{{it.quantity}}</span> x {{it.product.name}}<span style="color: #c4224c;" >-({{it.product.size_1}}) (Rs.{{it.price}})</span></li>  <!-- -{{it['product'][it.size]}} -->
+                                    </ol>
+                                </td>
+
+                                <td>
+                                    <ol style="padding: 0 0 0 12px;">
+                                        <li style="padding: 0 0 0 10px;" *ngFor="let it of i.items">{{it.product.original}}</li>
+                                    </ol>
+                                </td>
+
+                                <td>{{i.total_items}}</td>
+
+                                <td>₹{{i.total_price}}/-</td>
+
+                                <td *ngIf="i.order_cancelled"><span class="label label-danger">Cancelled</span></td>
+                                <td *ngIf="!i.order_cancelled"><span class="label label-success">Not Yet</span></td>
+
+                                <td *ngIf="!i.cancel_reason"><span class="label label-primary">Not Yet</span></td>
+                                <td *ngIf="i.cancel_reason"><span class="label label-danger">{{i.cancel_reason}}</span></td>
+
+                                <td *ngIf="i.cod"><span class="label label-success">Yes</span></td>
+                                <td *ngIf="!i.cod"><span class="label label-danger">No</span></td>
+
+                                <td>{{i.applied_coupon_discount}}</td>
+                                <td>{{i.applied_coupon_name}}</td>
+                                <td>{{i.coupon_applied}}</td>
+                                <td>{{i.delivery_charge}}</td>
+
+                                <td>{{i.order_date | date : "dd.MM.y hh:mm:ss a"}}</td>
+
+                                <td>{{i.delivery_time | date : "hh:mm:ss a"}}</td>
+                                <td>{{i.time_taken_minutes}}</td>
+
+                                <td>{{i?.delivery_address?.address}}, {{i?.delivery_address?.address2}}, {{i?.delivery_address?.state}}, Pincode:- {{i?.delivery_address?.pincode}} Locality:- {{i?.delivery_address?.locality}} </td>
+                                <th>{{i.delivered_by}}</th>
+
+                                <td *ngIf="i.order_completed"><span class="label label-success">Order Completed</span></td>
+
+                                <td *ngIf="i.order_cancelled"><span class="label label-danger">Order Cancelled</span></td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+
+
+
+            </div>
+            <!-- /.box -->
+
+            <div class="row">
+                <!-- <mat-form-field>
+                    List length:
+                    <input matInput [(ngModel)]="length">
+                  </mat-form-field>
+                  
+                  <mat-form-field>
+                    Page size:
+                    <input matInput [(ngModel)]="perPage">
+                  </mat-form-field> -->
+
+                  <!-- <mat-form-field>
+                    Page size options:
+                    <input matInput
+                           [(ngModel)]="pageSizeOptions"
+                           (ngModelChange)="setPageSizeOptions($event)">
+                  </mat-form-field> -->
+                  
+                  <mat-paginator [length]="length"
+                                [pageSize]="pageSize"
+                                [pageSizeOptions]="pageSizeOptions"
+                                (page)="getData($event)"
+                                showFirstLastButtons>
+                  </mat-paginator>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,96 @@
+<h2 style="text-align: center;">Update/Edit Carousels</h2>
+<!-- page content -->
+<div class="container main">
+  <form [formGroup]="updateForm" class="edit-form">
+
+  <!-- url part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="image url 1">URL 1</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="url_1" formControlName="url_1" placeholder="Link or URL of Image (1)" #url_1>
+      </div>
+    </div>
+
+<!-- url part -->
+<div class="row">
+    <div class="col-25">
+      <label for="image url 2">URL 2</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="url_2" formControlName="url_2" placeholder="Link or URL of Image (2)" #url_2>
+    </div>
+  </div>
+
+  <!-- url part -->
+  <div class="row">
+      <div class="col-25">
+        <label for="image url 1">URL 3</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="url_3" formControlName="url_3" placeholder="Link or URL of Image (3)" #url_3>
+      </div>
+    </div>
+
+<!-- text part -->
+<div class="row">
+  <div class="col-25">
+       <label for="text">Text</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="text" name="text" formControlName="text" placeholder="Text for your Image" #text></div>
+   </div>
+ </div>
+</div> 
+
+	<!-- description part -->
+   <div class="row">
+      <div class="col-25">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="description" name="description" formControlName="description" placeholder="Detail Description About Image...." style="height:200px" #description></textarea>
+      </div>
+    </div>
+
+<!-- status -->
+<div class="row">
+  <div class="col-25">
+	<label for="enabled">(Active/Deactive)</label>
+  </div>
+    <div class="col-75">
+
+        <div>
+            <select formControlName="enabled" #enabled>
+                <option  [value]="true">True (Activate)</option>
+                <option [value]="false">False (DeActivate)</option>
+            </select>
+          <!-- <input type="text" id="enabled" name="enabled" formControlName="enabled" placeholder="Boolean (1 or 0)" #enabled> -->
+        </div>
+
+   <!--  <label class="switch">
+         <input type="checkbox">
+         <span class="slider round"></span>
+     </label> -->
+	</div>
+</div>
+
+<!-- index part -->
+<div class="row">
+  <div class="col-25">
+     <label for="index">Index</label>
+  </div>
+<div class="col-75">
+ <div class="input_fields_wraps">
+    <div><input type="number" id="index" name="index" formControlName="index" placeholder="Index of Carousels eg.(10)" #index></div>
+ </div>
+</div>
+</div>
+
+    <div class="row">
+      <input type="submit"  value="Update" (click)= "updateCarousels(url_1.value, url_2.value, url_3.value, text.value, description.value, enabled.value, index.value)">
+    </div>
+  </form>
+</div>

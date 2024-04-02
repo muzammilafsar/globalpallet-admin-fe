@@ -1,0 +1,110 @@
+<h2 style="text-align: center;">Daily Report</h2>
+
+<!-- listing of daily data (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive" *ngIf="own">
+                                  <table class="table table-hover auto-index css-serial" rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+                                              <th>Date</th> 
+                                              <th>Opening</th>
+                                              <th>Revenue (₹)</th>
+                                              <th>Bit</th>
+                                              <th>Order</th>
+                                              <th>Success</th>
+                                              <th>Cancel</th> 
+                                              <th>Cancel Reason</th>
+                                              <th>Platform</th>
+                                              <th>Locality</th>
+                                              <th>NumberOfItemsAndProductsList</th>
+                                              <th>Coupon-List</th>
+                                              <th>TimingsOfOrder</th> 
+                                              <th>Coupon (₹)</th>
+                                              <th>Delivery (₹)</th>
+                                              <th>Delivered By</th>
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of dailyreport">
+                                              <td>&nbsp;</td>
+                                              <td>{{i.date}}</td>
+                                              <td>{{i.opening | date : "hh:mm a"}}</td>
+                                              <td>{{i.revenue}}</td>
+                                              <td>{{i.bit}}</td>
+                                              <td>{{i.orders}}</td>
+                                              <td>{{i.success}}</td>
+                                              <td>{{i.cancelled}}</td> 
+
+                                              <td class="nowrap">
+                                                <li *ngFor="let it of i.cancel_reason">
+                                                    {{it.reason}} x {{it.count}}
+                                                </li>
+                                              </td>
+
+                                              <td >
+                                                  <li style="float: left;">Android({{i?.platform?.android}})</li>
+                                                  <li style="float: left;">Ios({{i?.platform?.ios}})</li>
+                                                  <li style="float: left;">Web({{i?.platform?.web}})</li>
+                                              </td>
+
+                                              <td class="nowrap">
+                                                <li *ngFor="let it of i.localityList">
+                                                    {{it.name}} x {{it.count}}
+                                                </li>
+                                              </td>
+
+                                              <td class="nowrap">
+                                                        <li *ngFor="let it of i.productList">
+                                                            {{it.name}} x {{it.count}}
+                                                        </li>
+                                              </td>
+
+                                              <td class="nowrap">
+                                                        <li *ngFor="let it of i.couponList">
+                                                            {{it.code}} x  {{it.count}}
+                                                        </li>
+                                              </td>
+
+                                                <td class="nowrap">
+                                                    <li *ngFor="let it of i.times">
+                                                        {{it | date : "hh:mm a"}}
+                                                    </li>
+                                                </td>
+
+                                              <td>{{i.coupon}}</td>
+                                              <td>{{i.delivery}}</td>
+
+                                              <td class="nowrap">
+                                                    <li *ngFor="let it of i.delivered_by">
+                                                        {{it.name}} x {{it.count}}
+                                                    </li>
+                                                </td>
+
+                                              <td>
+                                                <button type="button" class="btn btn-danger" (click)="delete(i._id)">Delete</button>
+                                              </td>
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+     </div>
+    </div>
+  </div>
+
+  <div class="container main" *ngIf="!own">
+      <p>Sorry You Do Not Have Access To This Component</p>
+  </div>

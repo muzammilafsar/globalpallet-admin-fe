@@ -1,0 +1,350 @@
+<h2 style="text-align: center;">Update/Edit Product</h2>
+<!-- page content -->
+<div class="container main">
+  <form [formGroup]="updateForm" class="edit-form">
+
+  <!-- name part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="name" formControlName="name" placeholder="Name of Product" #name>
+      </div>
+    </div>
+
+      <!-- product id part -->
+      <div class="row">
+        <div class="col-25">
+          <label for="product_id">Product Code</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="product_id" name="product_id" formControlName="product_id" placeholder="Code of Product" #product_id>
+        </div>
+      </div>
+
+	<!-- tags part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="tags">Tags</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="tags" name="tags" formControlName="tags" placeholder="Tags seperated by commas for Search efficiency" #tags>
+      </div>
+    </div>
+
+	<!-- category part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="category">Category(key)</label>
+      </div>
+      <div class="col-75">
+          <input type="text" id="category" name="category" formControlName="category" placeholder="Category Key" #category>
+        <!-- <select id="category" name="category" formControlName="category" #category>
+            <option *ngFor = "let i of categories" [value]="i.key">{{i?.name}}</option>
+        </select> -->
+      </div>
+    </div>
+
+	<!-- sizes part -->
+<div class="row">
+	   <div class="col-25">
+          <label for="sizes">Size(1)</label>
+       </div>
+    <div class="col-75">
+      <div class="input_fields_wrap">
+         <div><input type="text" id="size_1" name="size_1" formControlName="size_1" placeholder="Size of Product eg.(500gm/1kg or 1pc)" #size_1></div>
+      </div>
+    </div>
+</div>
+<!-- 
+ <div class="row">
+  <div class="col-25">
+       <label for="sizes">Size(2)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wrap">
+      <div><input type="text" id="size_2" name="size_2" formControlName="size_2" placeholder="Size of Product eg.(500gm/1kg or 1pc)" #size_2></div>
+   </div>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-25">
+       <label for="sizes">Size(3)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wrap">
+      <div><input type="text" id="size_3" name="size_3" formControlName="size_3" placeholder="Size of Product eg.(500gm/1kg or 1pc)" #size_3></div>
+   </div>
+ </div>
+</div> -->
+
+
+	<!-- quantity part -->
+  <div class="row">
+    <div class="col-25">
+         <label for="quantity">Quantity(1)</label>
+      </div>
+   <div class="col-75">
+     <div class="input_fields_wrap">
+        <div><input type="number"  id="qty_1" name="qty_1" formControlName="qty_1" placeholder="Quantity of Product eg.(1 or 2 or 3)" #qty_1></div>
+     </div>
+   </div>
+</div>
+
+ <!-- <div class="row">
+ <div class="col-25">
+      <label for="quantity">Quantity(2)</label>
+   </div>
+<div class="col-75">
+  <div class="input_fields_wrap">
+     <div><input type="number"  id="qty_2" name="qty_2" formControlName="qty_2"  placeholder="Quantity of Product eg.(1 or 2 or 3)" #qty_2></div>
+  </div>
+</div>
+</div>
+
+<div class="row">
+ <div class="col-25">
+      <label for="quantity">Quantity(3)</label>
+   </div>
+<div class="col-75">
+  <div class="input_fields_wrap">
+     <div><input type="number"  id="qty_3" name="qty_3" formControlName="qty_3"  placeholder="Quantity of Product eg.(1 or 2 or 3)" #qty_3></div>
+  </div>
+</div>
+</div> -->
+
+
+<!-- prices part -->
+<div class="row">
+	   <div class="col-25">
+          <label for="prices">Price(1)</label>
+       </div>
+    <div class="col-75">
+      <div class="input_fields_wraps">
+         <div><input type="number" id="price_1" name="price_1" formControlName="price_1" placeholder="Price of Product eg.(Rs.50)" #price_1></div>
+      </div>
+    </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-25">
+       <label for="prices">Price(2)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="number" id="price_2" name="price_2" formControlName="price_2" placeholder="Price of Product eg.(Rs.50)" #price_2></div>
+   </div>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-25">
+       <label for="prices">Price(3)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="number" id="price_3" name="price_3" formControlName="price_3" placeholder="Price of Product eg.(Rs.50)" #price_3></div>
+   </div>
+ </div>
+</div>  -->
+
+<!-- image upload part -->
+<div class="row">
+    <div class="form-group">
+        <div class="col-25">
+          <label for="image">Upload Image</label>
+       </div>
+	   <div class="col-75">
+        <div class="input_fields_wraps">
+            <div><input type="text" placeholder="Copy The Image URL Here !!" formControlName="image" #image></div>
+         </div>
+
+        <!-- <div class="input-group">
+            <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    Browse… <input type="file" id="imgInp">
+                </span>
+            </span>
+            <input type="text" class="form-control" readonly formControlName="image" #image>
+        </div>
+        <img id='img-upload'/> -->
+		</div>
+    </div>
+</div>
+
+
+<!-- status -->
+<div class="row">
+    <div class="col-25">
+    <label for="status">Status</label>
+    </div>
+      <div class="col-75">
+  
+          <div>
+              <select formControlName="status" #status>
+                  <option  [value]="true">Activate</option>
+                  <option [value]="false">Deactivate</option>
+              </select>
+            <!-- <input type="text" id="status" name="status" formControlName="status" placeholder="Boolean (Activate-true or Deactivate-false)" #status> -->
+          </div>
+  
+     <!--  <label class="switch">
+           <input type="checkbox">
+           <span class="slider round"></span>
+       </label> -->
+    </div>
+  </div>
+
+  <!-- coming soon -->
+<div class="row">
+  <div class="col-25">
+  <label for="coming_soon">Coming Soon</label>
+  </div>
+    <div class="col-75">
+
+        <div>
+            <select formControlName="coming_soon" #coming_soon>
+                <option [value]="false">Available</option>
+                <option [value]="true">Coming Soon</option>
+            </select>
+        </div>
+
+   <!--  <label class="switch">
+         <input type="checkbox">
+         <span class="slider round"></span>
+     </label> -->
+  </div>
+</div>
+
+	<!-- description part -->
+   <div class="row">
+      <div class="col-25">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="description" name="description" formControlName="description" placeholder="Detail Description About Product...." style="height:200px" #description></textarea>
+      </div>
+    </div>
+    
+
+<!-- veg/non-veg part -->
+<div class="row">
+
+    <div class="col-25">
+       <label for="veg">Veg ?</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div>
+          <select formControlName="veg" #veg>
+              <option  [value]="true">Veg</option>
+              <option [value]="false">Non-Veg</option>
+          </select>
+        <!-- <input type="text" id="veg" name="veg" formControlName="veg" placeholder="Boolean (Veg-true Or Non-Veg-false)" #veg> -->
+      </div>
+   </div>
+ </div>
+
+</div>
+
+<!-- chilly part -->
+<div class="row">
+  <div class="col-25">
+     <label for="chilly_level">Chilly Level</label>
+  </div>
+<div class="col-75">
+ <div class="input_fields_wraps">
+    <div><input type="number" id="chilly_level" name="chilly_level" formControlName="chilly_level" placeholder="Index of Chilly Level eg.(1-3)" #chilly_level></div>
+ </div>
+</div>
+</div>
+
+<!-- newly part -->
+<div class="row">
+  <div class="col-25">
+     <label for="newly">Newly</label>
+  </div>
+<div class="col-75">
+ <div class="input_fields_wraps">
+    <div>
+        <select formControlName="newly" #newly>
+            <option  [value]="true">Yes</option>
+            <option [value]="false">No</option>
+        </select>
+    </div>
+ </div>
+</div>
+</div>
+
+<!-- popular part -->
+<div class="row">
+  <div class="col-25">
+     <label for="popular">Popular</label>
+  </div>
+<div class="col-75">
+ <div class="input_fields_wraps">
+    <div>
+        <select formControlName="popular" #popular>
+            <option  [value]="true">Yes</option>
+            <option [value]="false">No</option>
+        </select>
+    </div>
+ </div>
+</div>
+</div>
+
+<!-- note part -->
+<div class="row">
+  <div class="col-25">
+     <label for="note">Note</label>
+  </div>
+<div class="col-75">
+ <div class="input_fields_wraps">
+    <div><input type="text" id="note" name="note" formControlName="note" placeholder="Note for Product....." #note></div>
+ </div>
+</div>
+</div>
+
+<!-- bit part -->
+<div class="row">
+  <div class="col-25">
+     <label for="bit">Bit</label>
+  </div>
+<div class="col-75">
+ <div class="input_fields_wraps">
+    <div><input type="number" id="bit" name="bit" formControlName="bit" placeholder="Bit of Product eg.(50)" #bit></div>
+ </div>
+</div>
+</div>
+
+<!-- index part -->
+<div class="row">
+    <div class="col-25">
+       <label for="index">Index</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="number" id="index" name="index" formControlName="index" placeholder="Index of Product eg.(50)" #index></div>
+   </div>
+ </div>
+</div>
+
+<!-- Explore Tag part -->
+<div class="row">
+  <div class="col-25">
+     <label for="explore_tag">Explore Tag(App)</label>
+  </div>
+<div class="col-75">
+ <div class="input_fields_wraps">
+    <div><input type="text" id="explore_tag" name="explore_tag" formControlName="explore_tag" placeholder="Index of Product eg.(50)" #explore_tag></div>
+ </div>
+</div>
+</div>
+
+    <div class="row">
+      <input type="submit" value="Update" (click)= "updateProduct(name.value, image.value, price_1.value, size_1.value, qty_1.value, category.value, tags.value, status.value, description.value, veg.value, index.value, explore_tag.value, coming_soon.value, chilly_level.value, newly.value, note.value, popular.value, bit.value, product_id.value)">
+    </div>
+  </form>
+</div>

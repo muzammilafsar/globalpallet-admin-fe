@@ -1,0 +1,24 @@
+
+.dropdown-menu {
+padding: 0px;
+}
+
+
+/* If the screen size is 768px wide or less, hide the element */
+/* @media screen and (min-width: 768px) {
+  .sidnav {
+    display: none;
+  }
+} */
+
+
+.caret {
+  color: grey
+}
+
+
+.nav>li>a {
+  position: relative;
+  display: block;
+  padding: 10px 10px;
+}

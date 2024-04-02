@@ -1,0 +1,210 @@
+<h2 style="text-align: center;">Business Report</h2>
+
+<!-- listing of daily data (this part will be copied to angular app, above given data is same in all pages) -->
+
+
+<div *ngIf="!businessreport" style="min-height: 5em; margin: 5em 0 8em 0">
+    <h4 class="text-center">No Business data yet. Reset must have happened.</h4>
+  </div>
+
+<div class="container main" *ngIf="businessreport">
+  <div class="row">
+    
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive" *ngIf="businessreport">
+                                  <table class="table table-hover auto-index css-serial" rules="all">
+                                      <thead>
+                                          <tr >
+                                              <th>Serial No.</th>
+                                         
+                                              <th>Opening</th>
+                                              <th>Revenue (₹)</th>
+                                              <th>Bit</th>
+                                              <th>Order</th>
+                                              <th>Success</th>
+                                              <th>Cancel</th> 
+                                              <th>Cancel Reason</th>
+                                              <th>Platform</th>
+                                              <th>NameOfLocalityAndAreas</th>
+                                              <th>NumberOfItemsAndProductsList</th>
+                                              <th>Items</th> 
+                                              <th>Coupon-List</th>
+                                              <th>Coupon (₹)</th>
+                                              <th>Delivery (₹)</th>
+                                              <th>Delivered By</th>
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr >
+                                              <td>&nbsp;</td>
+
+                                              <td>{{businessreport.opening | date : "dd.MM.y hh:mm:ss a"}}</td>
+                                              <td>{{businessreport.revenue}}</td>
+                                              <td>{{businessreport.bit}}</td>
+                                              <td>{{businessreport.orders}}</td>
+                                              <td>{{businessreport.success}}</td>
+                                              <td>{{businessreport.cancelled}}</td> 
+
+                                              <td class="nowrap">
+                                                <li *ngFor="let it of businessreport.cancel_reason">
+                                                    {{it.reason}} x  {{it.count}}
+                                                </li>
+                                              </td>
+
+                                              <td>
+                                                  <li style="float: left;">Android({{businessreport?.platform?.android}})</li>
+                                                  <li style="float: left;">iOS({{businessreport?.platform?.ios}})</li>
+                                                  <li style="float: left;">Web({{businessreport?.platform?.web}})</li>
+                                              </td>
+
+                                              <td class="nowrap">
+                                                <li *ngFor="let it of businessreport.localityList">
+                                                    {{it.name}} x {{it.count}}
+                                                </li>
+                                              </td>
+
+                                              <td class="nowrap">
+                                                        <li *ngFor="let it of businessreport.productList">
+                                                            {{it.name}} x {{it.count}}
+                                                        </li>
+                                              </td>
+
+                                              <td class="nowrap">{{businessreport.items}} </td> 
+
+                                              <td class="nowrap">
+                                                        <li *ngFor="let it of businessreport.couponList">
+                                                            {{it.code}} x  {{it.count}}
+                                                        </li>
+                                              </td>
+
+                                              <td>{{businessreport.coupon}}</td>
+                                              <td>{{businessreport.delivery}}</td>
+
+                                              <td class="nowrap">
+                                                    <li *ngFor="let it of businessreport.delivered_by">
+                                                        {{it.name}} x  {{it.count}}
+                                                    </li>
+                                              </td>
+
+                                              <td>
+                                                <button type="button" class="btn btn-danger" (click)="Reset()">Reset</button>
+                                              </td>
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+     </div>
+    </div>
+  </div>
+
+
+  <h2 style="text-align: center;">Old Business Report</h2>
+
+  <div *ngIf="!oldbusiness" style="min-height: 5em; margin: 5em 0 8em 0">
+    <h4 class="text-center">No Business History.</h4>
+  </div>
+
+  <div class="container main" *ngIf="oldbusiness">
+    <div class="row">
+      
+         <div class="col-md-12" id="details">
+  
+                 <div class="box">
+  
+                                <div class="table-responsive" >
+                                    <table class="table table-hover auto-index css-serial" rules="all">
+                                        <thead>
+                                            <tr>
+                                                <th>Serial No.</th>
+                                           
+                                                <td>From</td>
+                                                <td>Till</td>
+                                                <th>Revenue (₹)</th>
+                                                <th>Bit</th>
+                                                <th>Order</th>
+                                                <th>Success</th>
+                                                <th>Cancel</th> 
+                                                <th>Cancel Reason</th>
+                                                <th>Platform</th>
+                                                <th>NameOfLocalityAndAreas</th>
+                                                <th>NumberOfItemsAndProductsList</th>
+                                                <th>Items</th> 
+                                                <th>Coupon-List</th>
+                                                <th>Coupon (₹)</th>
+                                                <th>Delivery (₹)</th>
+                                                <td>Delivered By</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let o of oldbusiness">
+                                                <td>&nbsp;</td>
+  
+                                                <th>{{o.from}}</th>
+                                                <th>{{o.till}}</th>
+                                                <td>{{o.revenue}}</td>
+                                                <td>{{o.bit}}</td>
+                                                <td>{{o.orders}}</td>
+                                                <td>{{o.success}}</td>
+                                                <td>{{o.cancelled}}</td> 
+
+                                                <td>
+                                                    <li style="width: 10em" *ngFor="let it of o.cancel_reason">
+                                                        {{it.reason}} x  {{it.count}}
+                                                    </li>
+                                                </td>
+  
+                                                <td >
+                                                    <li style="float: left; width: 7em">Android({{o?.platform?.android}})</li>
+                                                    <li style="float: left; width: 7em">iOS({{o?.platform?.ios}})</li>
+                                                    <li style="float: left; width: 7em">Web({{o?.platform?.web}})</li>
+                                                </td>
+  
+                                                <td class="nowrap">
+                                                  <li *ngFor="let it of o.localityList">
+                                                      {{it.name}} x {{it.count}}
+                                                  </li>
+                                                </td>
+  
+                                                <td class="nowrap">
+                                                          <li *ngFor="let it of o.productList">
+                                                              {{it.name}} x {{it.count}}
+                                                          </li>
+                                                </td>
+  
+                                                <td class="nowrap">{{o.items}} </td> 
+  
+                                                <td class="nowrap">
+                                                          <li  style="width: 8em"  *ngFor="let it of o.couponList">
+                                                              {{it.code}} x  {{it.count}}
+                                                          </li>
+                                                </td>
+  
+                                                <td>{{o.coupon}}</td>
+                                                <td>{{o.delivery}}</td>                                                
+                                                <td class="nowrap">
+                                                        <li style="width: 8em"  *ngFor="let it of o.delivered_by">
+                                                            {{it.name}} x  {{it.count}}
+                                                        </li>
+                                              </td>
+                                            </tr>
+  
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+  
+                  </div>
+                            <!-- /.box -->
+       </div>
+      </div>
+    </div>

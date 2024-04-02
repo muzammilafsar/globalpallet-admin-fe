@@ -1,0 +1,58 @@
+
+<h2 style="text-align: center;">AppInstall History</h2>
+
+<!-- listing of otp data (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial" rules="all">
+                                      <thead>
+                                           <tr>
+                                              <th>Serial No.</th>
+
+                                              <th>Type</th>
+                                              <th>Platform</th>
+                                              <th>Time</th>
+                                              <th>IP Address</th> 
+                                              <th>Version</th>
+                                              <th>Installation Number</th>
+
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of appdata">
+                                              <td>&nbsp;</td>
+
+                                              <td *ngIf="i.isPad"><span class="label label-warning">Tablet</span></td>
+                                              <td *ngIf="!i.isPad"><span class="label label-primary">Mobile Phone</span></td> 
+                                              <td>{{i.platform}}</td>
+                                              <td>{{i.time | date : "dd.MM.y hh:mm:ss a"}}</td>
+                                              <td>{{i.ipAddress}}</td>
+                                              <td>{{i.platform === 'ios' ? 'iOS' : 'Android'}} - {{i.version}}</td>
+                                              <td>{{i.installation_no}}</td>
+                                              
+                                              <td>
+                                                <button type="button" class="btn btn-danger" (click)="delete(i._id)">Delete</button>
+                                              </td>
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>
+

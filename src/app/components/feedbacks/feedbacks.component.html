@@ -1,0 +1,93 @@
+
+<h2 style="text-align: center;">Feedbacks</h2>
+
+<!-- listing of otp data (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover" rules="all">
+                                      <thead>
+                                           <tr>
+                                              <th>FeedBack No.</th>
+                                              <th>Mobile</th>
+                                              <th>Name</th> 
+                                              <th>Order ID</th>
+                                              <th>Rating</th>
+                                              <th>TimeStamp</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of feedbackdata">
+                                              <td>{{i.feedback_no}}</td>
+                                              <td>{{i.mobile}}</td>
+                                              <td>{{i.name}}</td>
+                                              <td>{{i.order_special_id}}</td>
+                                              <td>
+        
+                                                <div class="row">
+                                                    <div class="column left">
+                                                        <h4>Behavior</h4>
+                                                    </div>
+                                                    <div class="column right">
+                                                        <div class="column" *ngFor="let item of createRange(i.rating.behavior)">
+                                                        <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 2em; width: 2em" class="img-fluid" src={{star}}>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="column left">
+                                                        <h4>Time</h4>
+                                                    </div>
+                                                    <div class="column right">
+                                                        <div class="column" *ngFor="let item of createRange(i.rating.timely)">
+                                                        <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 2em; width: 2em" class="img-fluid" src={{star}}>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="column left">
+                                                        <h4>Packaging</h4>
+                                                    </div>
+                                                    <div class="column right">
+                                                        <div class="column" *ngFor="let item of createRange(i.rating.packaging)">
+                                                        <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 2em; width: 2em" class="img-fluid" src={{star}}>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="column left">
+                                                        <h4>OverAll</h4>
+                                                    </div>
+                                                    <div class="column right">
+                                                        <div class="column" *ngFor="let item of createRange(i.rating.overall)">
+                                                        <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 2em; width: 2em" class="img-fluid" src={{star}}>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                </td>
+
+                                              <td>{{i.timestamp | date : "dd.MM.y hh:mm:ss a"}}</td>
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>
+

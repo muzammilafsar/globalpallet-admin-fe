@@ -1,0 +1,101 @@
+<h2 style="text-align: center;">Create New Carousel</h2>
+<!-- page content -->
+<div class="container main">
+  <form [formGroup]="createForm" class="create-form">
+
+<!-- prices part -->
+<div class="row">
+	   <div class="col-25">
+          <label for="url_1">URL(1)</label>
+       </div>
+    <div class="col-75">
+      <div class="input_fields_wraps">
+         <div><input type="text" id="url_1" placeholder="URL for Image(1)" #url_1></div>
+      </div>
+    </div>
+</div>
+
+ <div class="row">
+  <div class="col-25">
+       <label for="url_2">URL(2)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="url_2" placeholder="URL for Image(2)" #url_2></div>
+   </div>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-25">
+       <label for="url_3">URL(3)</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="url_3" placeholder="URL for Image(3)" #url_3></div>
+   </div>
+ </div>
+</div> 
+
+<div class="row">
+  <div class="col-25">
+       <label for="text">Text</label>
+    </div>
+ <div class="col-75">
+   <div class="input_fields_wraps">
+      <div><input type="text" id="text" placeholder="Text for Image" #text></div>
+   </div>
+ </div>
+</div> 
+
+	<!-- description part -->
+   <div class="row">
+      <div class="col-25">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="description" placeholder="Detail Description About Carousels...." style="height:200px" #description></textarea>
+      </div>
+    </div>
+
+<!-- status -->
+<div class="row">
+  <div class="col-25">
+	<label for="enabled">(Active/Deactive)</label>
+  </div>
+    <div class="col-75">
+
+        <div>
+            <select #enabled>
+                <option  [value]="true">True (Activate)</option>
+                <option [value]="false">False (DeActivate)</option>
+            </select>
+          <!-- <input type="boolean" id="enabled" placeholder="Boolean (True Or False)" #enabled> -->
+        </div>
+
+   <!--  <label class="switch">
+         <input type="checkbox">
+         <span class="slider round"></span>
+     </label> -->
+	</div>
+</div>
+
+
+    	<!-- Index part -->
+      <div class="row">
+        <div class="col-25">
+             <label for="index">Index</label>
+          </div>
+       <div class="col-75">
+         <div class="input_fields_wraps">
+            <div><input type="number" id="index" placeholder="Index" #index></div>
+         </div>
+       </div>
+      </div> 
+
+
+    <div class="row">
+      <input type="submit" value="Create New Carousel" (click)= "addCarousels(url_1.value, url_2.value, url_3.value, text.value, description.value, enabled.value, index.value)">
+    </div>
+  </form>
+</div>

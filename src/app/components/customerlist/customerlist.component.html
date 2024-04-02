@@ -1,0 +1,95 @@
+<h2 style="text-align: center;">All Customers</h2>
+
+<!-- listing of products (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+    <div class="row">
+        <div class="col-sm-12" id="customer-orders">
+            <div class="box">
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial" rules="all">
+                        <thead>
+                            <tr>
+                                <th>Serial No.</th>
+                                <th>Customer Name</th>
+                                <th>Mobile</th>
+                                <th>Address</th>
+                                <th>User Status</th>
+                                <th>Remarks</th>
+                                <th>Private Remarks</th>
+                                <th>User Since</th>
+                                <th>No. of Success Orders</th>
+                                <th>No. of Cancelled Orders</th>
+                                <th>No. of Total Orders</th>
+                                <th>Wallet Balance</th>
+                                <th>Items In Cart</th>
+                                <th>Favourites</th>
+                                <th>Membership</th>
+                                <th>Alter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cus of customers">
+                                <td>&nbsp;</td>
+                                <td>{{cus.name}}</td>
+                               
+                                <td>{{cus.mobile}}</td>
+                                
+                                <td>
+                                    <li *ngFor= "let i of cus.address">
+                                       ({{i.title}}):- {{i.address}}, {{i.address2}}, Pincode:- {{i.pincode}}, State:- {{i.state}}, Locality:- {{i.locality}}
+                                    </li>
+                                </td>
+                               
+                                <td><span class="label label-danger" *ngIf="cus.user_flag_danger">Banned</span>
+                                <span class="label label-primary" *ngIf="!cus.user_flag_danger && !cus.user_flag_important">Regular</span>
+                                <span class="label label-success" *ngIf="cus.user_flag_important">Important</span></td>
+
+                                <!-- <td><span class="label label-primary" *ngIf="!cus.user_flag_important">Not Important yet</span></td> -->
+
+                                <td>{{cus.remarks}}</td>
+
+                                <td>{{cus.feedback_private}}</td>
+
+                                <td>{{cus.user_since | date: "dd.MM.y hh:mm:ss a"}}</td>
+
+                                <td>{{cus.completed_orders}}</td>
+
+                                <td>{{cus.cancelled_orders}}</td>
+
+                                <td>{{cus.total_orders}}</td>
+
+                                <td>{{cus.wallet_balance}}</td>
+
+                                <td>
+                                    <li *ngFor="let item of cus.itemsInCart">
+                                      {{item}}
+                                    </li>
+                                </td>
+
+                                <td>
+                                    <li *ngFor="let it of cus.favourites">
+                                        {{it}}
+                                    </li>
+                                </td>
+
+                                <td>
+                                   <span class="label label-warning" *ngIf="cus.goldMember">Gold</span>
+                                   <span class="label label-default" *ngIf="!cus.goldMember">Basic</span>
+                                </td>
+
+                                <td><button type="button" class="btn btn-primary" (click)="editUser(cus._id)">Edit</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- table-responsive -->
+
+            </div>
+            <!-- /.box -->
+
+
+        </div>
+    </div>
+</div>

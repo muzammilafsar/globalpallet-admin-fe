@@ -1,0 +1,73 @@
+<h2 style="text-align: center;">All Coupons</h2>
+
+
+<div class="container bg-1 main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial" rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+                                              <th>Name</th>
+                                              <th>Code</th>
+                                              <th>Amount</th>
+                                              <th>Percent</th>
+                                              <th>Enable</th>
+                                              <!-- <th>Details</th> -->
+                                              <th>D.O.C</th>
+                                              <!-- <th>Validity</th> -->
+                                              <th>Times Valid/User</th>
+                                              <th>First Order Only</th>
+                                              <th>Valid Once</th>
+                                              <th>Active</th>
+                                              <th>Min. Order Value</th>
+                                              <!-- <th>Min. Order Applicable</th> -->
+                                              <th>Gold Member</th>
+                                              <th>Index</th>
+                                              
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of coupons">
+                                              <td>&nbsp;</td>
+                                              <td>{{i.name}}</td>
+                                              <td>{{i.code}}</td>
+                                              <td>{{i.amount === 0 ? '-' : i.amount}}</td>
+                                              <td>{{i.percent === 0 ? '-' : i.percent}}</td>
+                                              <td>{{!i.enable ? '✅' : '❌'}}</td>
+                                              <!-- <td>{{i.details}}</td> -->
+                                              <td>{{i.date_of_creation}}</td>
+                                              <!-- <td>{{i.validity}}</td> -->
+                                              <td>{{i.times_valid_per_user}}</td>
+                                              <td>{{i.first_order_only ? '✅' : '❌'}}</td>
+                                              <td>{{i.valid_once ? '✅' : '❌'}}</td>
+                                              <td>{{i.active ? '✅' : '❌'}}</td>
+                                              <td>{{i.min_order_value}}</td>
+                                              <!-- <td>{{i.min_order_applicable}}</td> -->
+                                              <td>{{i.goldMember ? '✅' : '❌'}}</td>
+                                              <td>{{i.index}}</td>
+
+                                              <td>
+                                                    <button type="button" class="btn btn-primary" (click)="editCoupons(i._id)">Edit</button>
+                                                    <button type="button" class="btn btn-danger" (click)="deleteCoupons(i._id)">Delete</button>
+                                              </td>
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>

@@ -1,0 +1,46 @@
+<h2 style="text-align: center;">All Constants</h2>
+
+
+<div class="container bg-1 main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial"  rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+
+                                              <th>Key</th>
+                                              <th>Constants</th>
+
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of constants">
+                                            <td>&nbsp;</td>
+                                              
+                                              <td>{{i.key}}</td>
+                                              <td style="width: 20px">{{i.constants}}</td>
+
+                                              <td><button type="button" class="btn btn-primary" (click)="editConstants(i._id)">Edit</button></td>   
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>
+
+

@@ -1,0 +1,68 @@
+<h2 style="text-align: center;">Delivery Data By Boys</h2>
+
+<!-- listing of products (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+    <div class="row">
+        <div class="col-md-12" id="customer-orders">
+
+            <div class="box">
+
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial" rules="all">
+                        <thead>
+                            <tr>
+                                <th>Serial No.</th>
+
+                                <th>Date</th>
+                                <th>Day Number</th>
+                                <th>Deliveries</th>
+                                <th>Key</th>
+                                <th>Orders</th>
+                                <th>Cancel</th>
+                                <th>Success</th>
+                                <th>Total Collection</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of boysdata">
+                                <td>&nbsp;</td>
+
+                                <td>{{i.date | date : "dd.MM.y hh:mm:ss a"}}</td>
+                                <td>{{i.day_number}}</td>
+
+                                <td>
+                                    <ol style="float: left; padding: 0 0 0 10px;">
+                                        <li *ngFor="let it of i.deliveries">
+                                          Assigned Orders:- {{it.assigned_orders}} <br>
+                                          Boy Name:- {{it.boy}} <br>
+                                          Cancelled:- {{it.cancelled}} <br>
+                                          Delivery Count:- {{it.delivery_count}} <br>
+                                          Total Collection:- {{it.total_collection}} <br>
+                                          Total Orders:- {{it.total_orders}} <br>
+                                        </li>  
+                                    </ol>
+                                </td>
+
+                                <td>{{i.key}}</td>
+                                <td>{{i.orders}}</td>
+                                <th>{{i.cancel}}</th>
+                                <td>{{i.success}}</td>
+                                <td>{{i.total_collection}}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+
+            </div>
+            <!-- /.box -->
+
+
+        </div>
+    </div>
+</div>
+
+

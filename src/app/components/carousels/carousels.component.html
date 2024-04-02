@@ -1,0 +1,58 @@
+<h2 style="text-align: center;">All Carousels</h2>
+
+
+<div class="container main">
+    <div class="row">
+         <div class="col-md-12" id="details">
+  
+                 <div class="box">
+  
+                                <div class="table-responsive">
+                                    <table class="table table-hover auto-index css-serial" rules="all">
+                                        <thead>
+                                            <tr>
+                                                <th>Serial No.</th>
+                                                <th>App Carousels</th>
+                                                <th>Website Carousels</th>
+                                                <th>Other</th>
+                                                <th>Text</th>
+                                                <th>Description</th>
+                                                <th>Status</th>
+                                                <th>Index</th>
+                                                <th>Alter</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let i of carousels">
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 8em; width: 16em" class="img-fluid" src={{i.url_1}}>            
+                                                </td>
+                                                <td>
+                                                    <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 8em; width: 16em" class="img-fluid" src={{i.url_2}}>            
+                                                </td>
+                                                <td>
+                                                    <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 8em; width: 16em" class="img-fluid" src={{i.url_3}}>            
+                                                </td>
+                                                <td>{{i.text}}</td>
+                                                <td class="nowrap">{{i.description}}</td>
+
+                                                <td *ngIf="i.enabled"><span class="label label-success">Available</span></td>
+                                                <td *ngIf="!i.enabled"><span class="label label-danger">Not Available</span></td>
+
+                                                <td>{{i.index}}</td>
+                                                
+                                                <td>
+                                                    <button type="button" class="btn btn-primary" (click)="editCarousels(i._id)">Edit</button>
+                                                    <button type="button" class="btn btn-danger" (click)="deleteCarousels(i._id)">Delete</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <!-- /.table-responsive -->
+                </div>
+             <!-- /.box -->
+       </div>
+    </div>
+</div>

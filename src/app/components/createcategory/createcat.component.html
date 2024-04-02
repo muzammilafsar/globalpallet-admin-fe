@@ -1,0 +1,125 @@
+<h2 style="text-align: center;">Create New Category</h2>
+<!-- page content -->
+<div class="container main">
+  <form action="/" [formGroup]="createForm" class="create-form">
+
+  <!-- name part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Category Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" placeholder="Name of Category" #name>
+      </div>
+    </div>
+
+  <!-- segment part -->
+  <div class="row">
+    <div class="col-25">
+      <label for="segment">Category Segment</label>
+    </div>
+    <div class="col-75">
+      <input type="text" placeholder="Segment of Category" #segment>
+    </div>
+  </div>
+
+<!-- image upload part -->
+<div class="row">
+    <div class="form-group">
+        <div class="col-25">
+          <label for="image">Upload Image</label>
+       </div>
+	   <div class="col-75">
+        <div class="input_fields_wraps">
+            <div><input type="text" placeholder="Copy The Image URL Here !!" #image></div>
+         </div>
+		</div>
+    </div>
+</div>
+
+<!-- status -->
+<div class="row">
+    <div class="col-25">
+    <label for="enable">(Activate/DeActivate)</label>
+    </div>
+      <div class="col-75">
+  
+           <div>
+              <select #enable>
+                  <option  [value]="true">True (Activate)</option>
+                  <option [value]="false">False (DeActivate)</option>
+              </select>
+             <!-- <input type="text" placeholder="Boolean (True Or False)" #enable> -->
+           <!-- <div> <input type="checkbox" value="status" #status>Boolean (True Or False)--> </div> 
+  
+     <!--  <label class="switch">
+           <input type="checkbox">
+           <span class="slider round"></span>
+       </label> -->
+    </div>
+  </div>
+  
+  <!-- newly -->
+<div class="row">
+  <div class="col-25">
+  <label for="newly">Newly</label>
+  </div>
+    <div class="col-75">
+         <div>
+            <select #newly>
+                <option  [value]="true">True (Yes)</option>
+                <option [value]="false">False (No)</option>
+            </select>
+         </div>
+    </div>
+  </div>
+
+	<!-- source part -->
+  <div class="row">
+      <div class="col-25">
+        <label for="source">Source</label>
+      </div>
+      <div class="col-75">
+        <input type="text" placeholder="Tags seperated by commas for Search efficiency" #source>
+      </div>
+    </div>
+
+	<!-- description part -->
+  <div class="row">
+      <div class="col-25">
+        <label for="details">Description/Details</label>
+      </div>
+      <div class="col-75">
+        <textarea type="text" placeholder="Detail Description About CAtegory...." style="height:200px" #details></textarea>
+      </div>
+    </div>
+
+	<!-- tags part -->
+    <div class="row">
+      <div class="col-25">
+        <label for="tag">Tags</label>
+      </div>
+      <div class="col-75">
+        <input type="text" placeholder="Tags seperated by commas for Search efficiency" #tag>
+      </div>
+    </div>
+
+<!-- key part -->
+<div class="row">
+	   <div class="col-25">
+          <label for="key">Key</label>
+       </div>
+    <div class="col-75">
+      <div class="input_fields_wraps">
+         <div><input type="text" placeholder="Key...." #key></div>
+      </div>
+    </div>
+</div>
+
+
+    <div class="row">
+      <input type="submit"  value="Create New Category" (click)= "addCategory(name.value, image.value, enable.value, source.value, details.value, tag.value, key.value, newly.value, segment.value)">
+    </div>
+  </form>
+</div>
+

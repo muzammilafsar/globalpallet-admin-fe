@@ -1,0 +1,55 @@
+<h2 style="text-align: center;">All Offers</h2>
+
+
+<div class="container bg-1 main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial"  rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+                                              <th>Image</th>
+                                              <th>Title</th>
+                                              <th>SubTitle</th>
+                                              <th>Description</th>
+                                              <th>Coupon Code</th>
+                                              <th>Availibility</th>
+                                              <th>Index</th>
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of offers">
+                                            <td>&nbsp;</td>
+                                              <td>
+                                                <img id="oImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 8em; width: 18em" class="img-fluid" src={{i.image}}>            
+                                              </td>
+                                              <td>{{i.title}}</td>
+                                              <td>{{i.subtitle}}</td>
+                                              <td>{{i.description}}</td>
+                                              <td>{{i.coupon_code}}</td>
+                                              <td *ngIf="i.enabled"><span class="label label-success">Activate</span></td>
+                                              <td *ngIf="!i.enabled"><span class="label label-danger">DeActivate</span></td>
+                                              <td>{{i.index}}</td>
+                                              <td><button type="button" class="btn btn-primary" (click)="editOffers(i._id)">Edit</button>
+                                                <button type="button" class="btn btn-danger" (click)="deleteOffers(i._id)">Delete</button></td>
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>
+

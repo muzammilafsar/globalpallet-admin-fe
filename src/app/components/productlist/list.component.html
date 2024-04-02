@@ -1,0 +1,98 @@
+<h2 style="text-align: center;">All Products</h2>
+
+<!-- listing of products (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial" rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+                                              <th>Product ID</th>
+                                              <th>Product Name</th>
+                                              <th>Image</th>
+                                              <th>Price</th>
+                                              <!-- <th>Price2</th>
+                                              <th>Price3</th> -->
+                                              <th>Size</th>
+                                              <!-- <th>Size2</th>
+                                              <th>Size3</th> -->
+                                              <th>Stock</th>
+                                              <!-- <th>Q:2</th>
+                                              <th>Q:3</th> -->
+                                              <th>Category</th>
+                                              <th>Tags</th>
+                                              <th>Chilly Level</th>
+                                              <th>Newly</th>
+                                              <th>Popular</th>
+                                              <th>Note</th>
+                                              <th>Bit</th>
+                                              <th>Status</th>
+                                              <th>Sales</th>
+                                              <th>DetailAndDescriptionOfTheProduct</th>
+                                              <th>Veg</th>
+                                              <th>Index</th>
+                                              <th>Explore Tag(App)</th>
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of products">
+                                              <td>&nbsp;</td>
+                                              <td>{{i.product_id}}</td>
+                                              <td>{{i.name}}</td>
+                                              <td>
+                                                <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 8em; width: 16em" class="img-fluid" src={{i.image}}>            
+                                              </td>
+                                              <td>₹{{i.price_1}}/-</td>
+                                              <!-- <td>₹{{i.price_2}}/-</td>
+                                              <td>₹{{i.price_3}}/-</td> -->
+                                              <td>{{i.size_1}}</td>
+                                              <!-- <td>{{i.size_2}}</td>
+                                              <td>{{i.size_3}}</td> -->
+                                              <td *ngIf="i.qty_1 > 0">{{i.qty_1}}</td>
+                                              <td *ngIf="i.qty_1 === 0"><span class="label label-primary">Sold</span></td>
+                                              <!-- <td>{{i.qty_2}}</td>
+                                              <td>{{i.qty_3}}</td> -->
+                                              <td>{{i.category}}</td>
+                                              <td>{{i.tags}}</td>
+                                              <td>{{i.chilly_level}}</td>
+
+                                              <td *ngIf="i.newly"><span class="label label-success">Yes</span></td>
+                                              <td *ngIf="!i.newly"><span class="label label-default">No</span></td>
+
+                                              <td *ngIf="i.popular"><span class="label label-success">Yes</span></td>
+                                              <td *ngIf="!i.popular"><span class="label label-default">No</span></td>
+
+                                              <td>{{i.note}}</td>
+                                              <td>{{i.bit}}</td>
+                                              <td *ngIf="i.status && !i.coming_soon"><span class="label label-success">Available</span></td>
+                                              <td *ngIf="!i.status && !i.coming_soon"><span class="label label-danger">Not Available</span></td>
+                                              <td *ngIf="i.coming_soon"><span class="label label-primary">Coming Soon</span></td>
+                                              <td>{{i.order_score}}</td>
+                                              <td>{{i.description}}</td>
+                                              <td *ngIf="i.veg"><span class="label label-success">Veg</span></td>
+                                              <td *ngIf="!i.veg"><span class="label label-danger">Non-Veg</span></td>
+                                              <td class="nowrap">{{i.index}}</td>
+                                              <td class="nowrap">{{i.explore_tag}}</td>
+                                              <td><button type="button" class="btn btn-primary" (click)="editProduct(i._id)">Edit</button>
+                                                <button type="button" class="btn btn-danger" (click)="deleteProduct(i._id)">Delete</button></td>
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>

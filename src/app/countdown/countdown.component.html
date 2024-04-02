@@ -1,0 +1,6 @@
+<p *ngIf="!expired">
+  <button type="button" class="btn text-center" style="background-color: #00c700;">{{getminutes}}:{{seconds}}</button>
+</p>
+<p *ngIf="expired">
+  <button type="button" class="btn btnn text-center" style="background-color: #c70039;">{{getminutes}}:{{seconds}}</button>
+</p>

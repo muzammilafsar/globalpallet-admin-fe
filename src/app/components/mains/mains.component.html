@@ -1,0 +1,83 @@
+<h2 style="text-align: center; font-size: 32px;">
+    Mains Triggers</h2>
+
+<!-- listing of otp data (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+    <div class="row">
+        <div class="col-md-12" id="details">
+
+            <div class="box">
+
+                <div class="table-responsive">
+                    <table class="table table-hover auto-index css-serial">
+
+                        <tr routerLink="/activeorders">
+
+                            <th>
+                                <h2>Orders</h2>
+                            </th>
+                            <td *ngIf = "!main['orders']">
+                                <h1 style="color: gray;">
+                                    {{main['orders']}}
+                                </h1>
+                            </td>
+                            <td *ngIf = "main['orders']">
+                                <h1 style="color: green;">
+                                    {{main['orders']}}
+                                </h1>
+                            </td>
+
+                        </tr>
+
+
+                        <tr routerLink="/customercontact">
+
+                            <th>
+                                <h2>Issues</h2>
+                            </th>
+                            <td *ngIf = "!main['issues']">
+                                <h1 style="color: gray;">
+                                    {{main['issues']}}
+                                </h1>
+                            </td>
+                            <td *ngIf = "main['issues']">
+                                <h1 style="color: green;">
+                                    {{main['issues']}}
+                                </h1>
+                            </td>
+
+
+                        </tr>
+
+
+                        <tr routerLink="/partyorders">
+
+                            <th>
+                                <h2>Party</h2>
+                            </th>
+                            <td *ngIf = "!main['party']">
+                                <h1 style="color: gray;">
+                                    {{main['party']}}
+                                </h1>
+                            </td>
+                            <td *ngIf = "main['party']">
+                                <h1 style="color: green;">
+                                    {{main['party']}}
+                                </h1>
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+
+            </div>
+            <!-- /.box -->
+
+
+        </div>
+    </div>
+</div>

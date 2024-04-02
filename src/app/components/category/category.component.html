@@ -1,0 +1,65 @@
+<h2 style="text-align: center;">All Category</h2>
+
+<!-- listing of products (this part will be copied to angular app, above given data is same in all pages) -->
+
+<div class="container main">
+  <div class="row">
+       <div class="col-md-12" id="details">
+
+               <div class="box">
+
+                              <div class="table-responsive">
+                                  <table class="table table-hover auto-index css-serial" rules="all">
+                                      <thead>
+                                          <tr>
+                                              <th>Serial No.</th>
+                                              <th>Category Name</th>
+                                              <th>Segment</th>
+                                              <th>Image</th>
+                                              <th>Details</th>
+                                              <!-- <th>Tags</th> -->
+                                              <th>Source</th>
+                                              <th>Key</th>
+                                              <th>Newly</th>
+                                              <th>Enabled</th>
+                                              <th>Alter</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr *ngFor="let i of category">
+                                              <td>&nbsp;</td>
+                                              <td>{{i?.name}}</td>
+                                              <td>{{i?.segment}}</td>
+                                              <td>
+                                                <img id="pImg" style="padding: 0.4em 0.4em 0.4em 0.4em; height: 8em; width: 11em" class="img-fluid" src={{i?.image}}>            
+                                              </td>
+                                              <td>{{i?.details}}</td>
+                                              <!-- <td>{{i?.tag}}</td> -->
+                                              <td>{{i?.source}}</td>
+                                              <td>{{i?.key}}</td>
+
+                                              <td>
+                                                  <span *ngIf="i?.newly" class="label label-success">Yes</span>
+                                                  <span *ngIf="!i?.newly" class="label label-default">No</span>
+                                              </td>
+
+                                              <td *ngIf="i?.enable"><span class="label label-success">Available</span></td>
+                                              <td *ngIf="!i?.enable"><span class="label label-danger">Not Available</span></td>
+
+                                              <td><button type="button" class="btn btn-primary" (click)="editCategory(i._id)">Edit</button>
+                                                <button type="button" class="btn btn-danger" (click)="deleteCategory(i._id)">Delete</button></td>
+
+                                          </tr>
+
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <!-- /.table-responsive -->
+
+                </div>
+                          <!-- /.box -->
+
+
+     </div>
+    </div>
+  </div>
